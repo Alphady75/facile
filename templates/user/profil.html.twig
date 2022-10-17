@@ -2,6 +2,10 @@
 
 {% block title %}Espace client | JVGO{% endblock %}
 
+{% block header %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
 {% block stylesheets %}
     <style>
         #navigation {
@@ -75,7 +79,7 @@
                     <li class="active"><a href="{{path('user.profil')}}"><i class="fa fa-key"></i> Mes accès</a>
 
                     </li>
-                    <li><a href="{{path('home')}}#contact"><i class="fa fa-envelope"></i> Contactez-nous</a>
+                    <li><a href="#"><i class="fa fa-envelope"></i> Contactez-nous</a>
 
                     </li>
                     <li><a href="{{path('logout')}}"><i class="fa fa-power-off"></i> Se deconnecter</a>

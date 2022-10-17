@@ -16,15 +16,11 @@ use Doctrine\ORM\EntityManagerInterface;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/", name="user")
+     * @Route("/compte", name="user")
      */
     public function index(): Response
     {
         $user = $this->getUser();
-
-        if(!$user){
-            return $this->redirectToRoute('login');
-        }
 
         $statut = $user->getStatutId();
 
@@ -62,10 +58,14 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/login", name="login")
+     * @Route("/", name="login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
+        if($this->getUser()){
+            return $this->redirectToRoute('user');
+        }
+
         $lastUsername = $authenticationUtils->getLastUsername();
         $error = $authenticationUtils->getLastAuthenticationError();
 
@@ -80,18 +80,22 @@ class UserController extends AbstractController
 
     
     /**
-     * @Route("/nouveauclient", name="neveau_client")
+     * @Route("/nouveauclient", name="nouveau_client")
      */
     public function client(EntityManagerInterface $em, Request $request, UserPasswordHasherInterface $passwordHasher, UserRepository $userRepository): Response
     {
-        $client = $userRepository->findBy([], ['id' => 'DESC'], 1);
+        if($this->getUser()){
+            return $this->redirectToRoute('user');
+        }
+        
+        //$client = $userRepository->findBy([], ['id' => 'DESC'], 1);
 
         if ($request->isMethod('POST')) {
 
             $user = new User();
 
             try {
-                $numero = $request->get('numero');
+                //$numero = $request->get('numero');
                 $nom = $request->get('nom');
                 $email = $request->get('email');
                 $password = $request->get('password');
@@ -99,7 +103,7 @@ class UserController extends AbstractController
                 $telephone = $request->get('telephone');
                 $statut = $request->get('statut');
                 
-                $user->setNumero($numero);
+                $user->setNumero(12345);
                 $user->setNom($nom);
                 $user->setEmail($email);
                 $user->setPassword($passwordHasher->hashPassword($user, $password));
@@ -127,7 +131,7 @@ class UserController extends AbstractController
         }
             
         return $this->render('user/inscription.html.twig', [
-            'numero' => 1556, //intval($client[0]->getId()) + 1,
+            //'numero' => intval($client[0]->getId()) + 1,
             'active' => 'client'
         ]);
     }

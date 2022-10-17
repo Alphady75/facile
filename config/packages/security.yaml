@@ -14,7 +14,7 @@ security:
         user_space:
             entity:
                 class: App\Entity\User
-                property: numero
+                property: email
                 
         chain_provider:
             chain:

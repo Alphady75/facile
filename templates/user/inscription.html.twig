@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Se connecter | JVGO{% endblock %}
+{% block title %}Nouveau client | JVGO{% endblock %}
 
 {% block stylesheets %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,61 +23,54 @@
 					</div>
 					<h3 class="text-center mb-4">Nouveau client?</h3>
 
-					<form role="form" method="post" action="" enctype="multipart/form-data">
-						<!-- Small boxes (Stat box) -->
-						<div class="row">
-							<div class="col-md-6">
+					<form role="form" method="post" action="" enctype="multipart/form-data" class="login-form">
 
-								<!-- Dossier -->
-								<div class="form-group">
-									<label>Numéro de dossier *</label>
-									<input type="text" name="numero" class="form-control" placeholder="Numéro du dossier" value="00{{numero}}2022" required/>
-								</div>
+						<!-- Nom -->
+						<div class="form-group">
+							<label>Nom du client *</label>
+							<input type="text" name="nom" class="form-control" placeholder="Le nom du client" required/>
+						</div>
 
-								<!-- Nom -->
-								<div class="form-group">
-									<label>Nom du client *</label>
-									<input type="text" name="nom" class="form-control" placeholder="Le nom du client" required/>
-								</div>
+						<div class="form-group">
+							<label>Email *</label>
+							<input type="email" name="email" id="email" class="form-control" placeholder="L'adresse email du client" required/>
+						</div>
 
-								<div class="form-group">
-									<label>Email *</label>
-									<input type="email" name="email" id="email" class="form-control" placeholder="L'adresse email du client" required/>
-								</div>
+						<div class="form-group">
+							<label>Numéro de téléphone</label>
+							<input type="text" name="telephone" id="telephone" class="form-control" placeholder="Le numéro de téléphone du client" required/>
+						</div>
 
-								<div class="form-group">
-									<label>Numéro de téléphone</label>
-									<input type="text" name="telephone" id="telephone" class="form-control" placeholder="Le numéro de téléphone du client" required/>
-								</div>
+						<div class="form-group">
+							<label>Mot de passe *</label>
+							<input type="password" name="password" class="form-control" placeholder="Le mot de passe" required/>
+						</div>
 
-								<div class="form-group">
-									<label>Mot de passe *</label>
-									<input type="password" name="password" class="form-control" placeholder="Le mot de passe" required/>
-								</div>
+						<div class="form-group">
+							<label>Entreprise</label>
+							<input type="text" name="entreprise" placeholder="Le nom de son entreprise" class="form-control"/>
+						</div>
 
-								<div class="form-group">
-									<label>Entreprise</label>
-									<input type="text" name="entreprise" placeholder="Le nom de son entreprise" class="form-control"/>
-								</div>
-
-								<div class="form-group">
-									<label>Statut du dossier *</label>
-									<select name="statut" class="form-control" required>
-										<option value="" disabled selected hidden>-- Choisir --</option>
-										<option value="1">Demande envoyer</option>
-										<option value="2">Demande en cours de traitement</option>
-										<option value="3">Terminer</option>
-									</select>
-								</div>
-
-							</div>
-
-							<div class="col-md-12 text-left mt-3" style="margin-bottom: 3%">
-								<button type="submit" class="btn btn-primary">Enregistrer</button>
-							</div>
-						</div><!-- /.row (main row) -->
+						<div class="form-group">
+							<label>Statut du dossier *</label>
+							<select name="statut" class="form-control" required>
+								<option value="" disabled selected hidden>-- Choisir --</option>
+								<option value="Demande envoyer">Demande envoyer</option>
+								<option value="Demande en cours de traitement">Demande en cours de traitement</option>
+								<option value="Terminer">Terminer</option>
+							</select>
+						</div>
+						<div class="form-group" style="margin-bottom: 3%">
+							<button type="submit" class="btn-home-border p-3 px-5">Enregistrer</button>
+						</div>
 					</form>
 
+				</div>
+
+
+
+				<div class="text-center mt-4">
+					<a href="{{ path('login') }}">Connexion?</a>
 				</div>
 			</div>
 		</div>

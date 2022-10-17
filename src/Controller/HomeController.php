@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/accueil", name="home")
+     * @Route("/nondisponible", name="home")
      */
     public function index(ArticleRepository $articleRepository, Request $request, \Swift_Mailer $mailer): Response
     {
