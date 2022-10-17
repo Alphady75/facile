@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace client | JVGO{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        #navigation {
+            background: #000!important;
+        }
+        .section-padding {
+            padding: 150px 0px!important;
+        }
+        .tabs-left, .tabs-right {
+            border-bottom: none;
+            padding-top: 2px;
+        }
+        .tabs-left {
+            border-radius:2px;
+            box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+            display: block;
+        }
+        .tab-content {
+            box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+            border-radius: 2px;
+            min-height: 100%;
+        }
+        .tabs-left>li, .tabs-right>li {
+            float: none;
+        }
+        .tabs-left>li {
+            margin-right: -1px;
+            border-top: 1px solid #ddd;
+        }
+        .tab-pane-head {
+            padding: 10px 15px;
+            background: #434859;
+            color: white;
+        }
+        .tab-pane-body {
+            padding: 10px 15px;
+        }
+        .tabs-left>li>a {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+        }
+        .tabs-left>li.active {
+            background: #434859;
+        }
+        .tabs-left>li.active>a {
+            color: white;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+<!-- START HOME -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row" style="min-height:200px;">
+            <div class="col-md-3">
+                <!-- required for floating -->
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tabs-left">
+                    <li style="border: none; padding: 10px;">
+                        <div style="display: flex;">
+                            <img src="/assets/img/avatar_user.jpeg" style="width: 56px; height: 56px; border-radius: 50%">
+                            <p style="margin-bottom: auto; margin-top: auto;">{{app.user.nom}}</p>
+                        </div>
+                    </li>
+                    <li><a href="{{path('user')}}"><i class="fa fa-folder"></i> Mon dossier</a>
+
+                    </li>
+                    <li class="active"><a href="{{path('user.profil')}}"><i class="fa fa-key"></i> Mes accès</a>
+
+                    </li>
+                    <li><a href="{{path('home')}}#contact"><i class="fa fa-envelope"></i> Contactez-nous</a>
+
+                    </li>
+                    <li><a href="{{path('logout')}}"><i class="fa fa-power-off"></i> Se deconnecter</a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active">
+                        <div class="tab-pane-head">
+                            Mes accès
+                        </div>
+                        <div class="tab-pane-body">
+                            <p>Identifiant : <strong>{{app.user.numero}}</strong></p>
+                            <p>Adresse email : <strong>{{app.user.email}}</strong></p>
+
+                            <form class="contact-form mb-3" method="post" action=" ">
+
+                                <div class="row">
+                                    <div class="form-group col-md-6 mt-3">
+                                        <p style="font-size: 18px">Modifiez votre mot de passe : </p>
+                                    </div>
+                                </div>
+
+                                {%  for message in app.flashes('success') %}
+                                    <div class="row" style="margin-bottom: 2%">
+                                        <div class="form-group col-md-6">
+                                            <div class="alert alert-success" style="background-color: #9BFFBE!important; color: black!important">
+                                                {{ message }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %} 
+                                {%  for message in app.flashes('error') %}
+                                    <div class="row" style="margin-bottom: 2%">
+                                        <div class="form-group col-md-6">
+                                            <div class="alert alert-danger" style="background-color: #F08080!important">{{ message }}</div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <input type="password" name="password" class="form-control" placeholder="Nouveau mot de passe" required="required" style="border-color: #434859; border-radius: 25px;">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="password" name="confirm_password" class="form-control" placeholder="Confirmer le nouveau mot de passe" required="required" style="border-color: #434859; border-radius: 25px;">
+                                    </div>
+                                    <div class="col-md-12 text-left">
+                                        <button type="submit" class="btn-home-border">Sauvegarder</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>
+<!-- END  HOME DESIGN -->
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter | JVGO{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Style CSS -->		
+    <link rel="stylesheet" href="/assets/login/style.css">
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block body %}
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="fa fa-user-o"></span>
+						</div>
+						<h3 class="text-center mb-4">Connectez-vous?</h3>
+						
+						<form action="{{ path('login') }}" method="post" class="login-form">
+
+							{% if error %}
+								<div class="alert alert-danger" style="background-color: #F08080!important">Identifiant incorrectes</div>
+							{% endif %}
+
+							<div class="form-group">
+								<input type="text" name="_username" value="{{ lastUsername }}" class="form-control rounded-left" placeholder="Email ou nom d'utilisateur" required>
+							</div>
+							<div class="form-group d-flex">
+							<input type="password" name="_password" class="form-control rounded-left" placeholder="Mot de passe" required>
+							</div>
+							<div class="form-group d-md-flex">
+								<div class="w-50">
+									<label class="checkbox-wrap checkbox-primary" style="font-size: 14px;">Rester connecté
+										<input type="checkbox" name="_remember_me" checked>
+										<span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="w-50 text-md-right">
+									<a href="#" style="font-size: 14px;">Mot de passe oublié</a>
+								</div>
+							</div>
+							<div class="form-group text-center">
+								<button type="submit" class="btn-home-border p-3 px-5">Connexion</button>
+							</div>
+						</form>
+	        		</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		
+		<meta name="description" content="Création de votre entreprise, Coaching de vos équipes, votre optimisation fiscale, préparation de votre business plan…">
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="/assets/img/jvgo_favicon.png">
+
+		<!-- SITE TITLE -->
+		<title>{% block title %}{% endblock %}</title>			
+		<!-- Latest Bootstrap min CSS -->
+		<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">		
+		<!-- Google Font -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+		<!-- Font Awesome CSS -->
+		<link rel="stylesheet" href="/assets/css/all.css">
+		<!-- themify-icons CSS -->
+		<link rel="stylesheet" href="/assets/fonts/themify-icons.css">
+		<!-- line-icons CSS -->
+		<link rel="stylesheet" href="/assets/fonts/line-icons.css">
+		<!--- owl carousel Css-->
+		<link rel="stylesheet" href="/assets/owlcarousel/css/owl.carousel.css">
+		<link rel="stylesheet" href="/assets/owlcarousel/css/owl.theme.css">				
+		<!-- venobox CSS -->		
+		<link rel="stylesheet" href="/assets/css/venobox.css">				
+		<!-- animate CSS -->		
+		<link rel="stylesheet" href="/assets/css/animate.css">
+		<!-- MAGNIFIC CSS -->
+		<link rel="stylesheet" href="/assets/css/magnific-popup.css">		
+		<!-- slicknav CSS -->		
+		<link rel="stylesheet" href="/assets/css/slicknav.css">
+		<!-- slick CSS -->			
+		<link rel="stylesheet" href="/assets/css/slick.css">	
+		<!-- slick-theme CSS -->			
+		<link rel="stylesheet" href="/assets/css/slick-theme.css">		
+		<!-- Style CSS -->		
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<!-- responsive CSS -->		
+		<link rel="stylesheet" href="/assets/css/responsive.css">
+		<!-- switcher CSS -->			
+		<link rel="stylesheet" href="/assets/css/switcher/switcher.css"> 	
+		<link rel="stylesheet" href="/assets/css/switcher/style1.css" id="colors">	
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style>
+			.section-padding {
+				padding: 50px 0!important;
+			}
+			.btn-home-border i {
+				position: absolute;
+				right: 12px;
+				top: 20px!important;
+				left: unset!important;
+				font-weight: bold;
+			}
+			.test_content {
+				width: 100%!important;
+			}
+			@media (max-width: 575px) {
+				.slicknav_btn {
+					top: -57px!important;
+				}
+			}
+			@media (max-width: 991px) {
+				.tab-content {
+					margin-top: 30px!important;
+				}
+			}
+		</style>
+        {% block stylesheets %}{% endblock %}
+	</head>
+	
+    <body data-spy="scroll" data-offset="80">
+
+		<!-- START PRELOADER -->
+		<div class="preloader">
+			<div class="status">
+				<div class="status-mes"></div>
+			</div>
+		</div>
+		 <!--  END PRELOADER -->
+		
+		{% block header %}
+
+		<div class="header_top">
+			<div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-8">
+                        <div class="header_top_left">
+                            <p><i class="fas fa-map-marker-alt"></i>207 Avenue Louise, 1050 Bruxelles </p>                                                                                  
+							<p><i class="far fa-envelope-open"></i> contact@jvgo.be</p>
+                         </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-4 d-none d-sm-block">
+                        <div class="header_top_right text-right">	
+							<ul class="header-social">
+								<li><a href="https://www.facebook.com/jvgobusinessbuilder"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="https://www.linkedin.com/in/jvgo-business-builder-a8230522b"><i class="fab fa-linkedin"></i></a></li>
+							</ul>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<!-- End Top Header -->
+		
+		<!-- START NAVBAR -->
+		<div id="navigation" class="hsp_opt fixed-top navbar-light bg-faded site-navigation">
+            <div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-3 col-sm-4">			
+						<div class="navbar-header">        
+							<a href="{{path('home')}}" class="navbar-brand"><img src="/assets/img/jbvo.png" alt="logo"></a>
+						</div>	
+					</div><!--- END Col -->
+				
+					<div class="col-lg-10 col-md-9 col-sm-8">
+						<nav id="main-menu" class="ml-auto">
+							<ul>
+								<li><a href="{{path('home')}}" class="{{active == 'home' ? 'current' : ''}}">Accueil</a></li>
+								<li class="{{active == 'services' ? 'current' : ''}}"><a href="{{path('services')}}">Nos services</a></li>
+								<li class="{{active == 'about' ? 'current' : ''}}"><a href="{{path('about')}}">A propos</a></li>
+								<li class="{{active == 'blog' ? 'current' : ''}}"><a href="{{path('blog')}}">Blog</a></li>	
+								<li><a href="{{path('user')}}">Espace client</a></li>
+								<li style="border: none;"><a class="btn-home-border" href="{{path('home')}}#contact" style="padding: 8px 22px; font-size: 13px;">CONSULTATION GRATUITE</a></li>		
+							</ul>
+						</nav>
+						<div id="mobile_menu"></div>					
+					</div> <!--- END Col -->
+				</div>				
+            </div><!--- END CONTAINER -->
+        </div> 
+		<!-- END NAVBAR -->
+
+		{% endblock %}
+		
+        {% block body %}{% endblock %}
+
+        {% block footer %}
+
+		<footer class="footer">
+			<div class="container">
+			    <div class="row footer_br">
+                	<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+						<div class="single-footer">
+							<div class="footer_logo">        
+								<a href="index.html"><img src="/assets/img/jbvo.png" alt="logo"></a>
+							</div>		
+							<p>	
+								JVGO vous aide à la création de votre entreprise, au coaching d’équipe, à optimiser votre fiscalité. 
+							</p>
+							<div class="footer_social">
+								<ul>
+									<li><a href="#" class="ti-facebook f_facebook"></a></li>
+									<li><a href="#" class="ti-linkedin f_twitter"></a></li>
+								</ul>					
+							</div> 	
+						</div>
+					</div>
+					
+					<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
+						<div class="row">
+							<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+								<div class="single-footer">
+									<h3 class="foot-title">JVGO</h3>
+									<div class="footer_menu">
+										<ul>
+											<li><a href="{{path('about')}}">A propos</a></li>													
+											<li><a href="{{path('cgv')}}">CGV</a></li>
+											<li><a href="{{path('mentions')}}">Mentions Légales </a></li>
+											<li><a href="{{path('politique')}}">Politique de confidentialité</a></li>
+										</ul>					
+									</div> 
+								</div>
+							</div>			
+
+							<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+								<div class="single-footer">
+									<h3 class="foot-title">NOS SERVICES</h3>
+									<div class="footer_menu">
+										<ul>
+											<li><a href="{{path('services')}}#creation">Création d'entreprise</a></li>
+											<li><a href="{{path('services')}}#fiscalite">Optimisation fiscale</a></li>
+											<li><a href="{{path('services')}}#comptabilite">Comptabilité</a></li>	
+											<li><a href="{{path('services')}}">Coaching</a></li>				
+										</ul>					
+									</div>
+								</div>								
+							</div>			
+
+							<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+								<div class="single-footer">
+									<h3 class="foot-title">CONTACT</h3>
+									<div class="footer_menu">
+										<ul>
+											<li><i class="ti-location-pin"></i> 207 Avenue Louise, 1050 Bruxelles, BELGIQUE</li>
+											<li><i class="fa fa-phone"></i> Phone: +32 (0)4 775 068 67</li>
+											<li><i class="ti-email"></i> contact@jvgo.be</li>				
+										</ul>					
+									</div>
+								</div>
+							</div>									
+						</div>
+					</div>
+									
+				</div>	
+				
+				<div class="row">
+					<div class="col-sm-12 text-center wow zoomIn">
+						<div class="footer_content">
+							<p>Copyright © 2022 JVGO</p>
+						</div>												
+					</div><!--- END COL -->
+				</div><!--- END ROW -->
+			</div><!--- END CONTAINER -->	
+		</footer>
+		<!-- END FOOTER -->	
+
+		{% endblock %}			
+		
+		<!-- Latest jQuery -->
+		<script src="/assets/js/jquery-1.12.4.min.js"></script>
+		<!-- Latest compiled and minified Bootstrap -->
+		<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+		<!-- modernizr JS -->		
+		<script src="/assets/js/modernizr-2.8.3.min.js"></script>
+		<!-- jquery.nav JS -->			
+		<script src="/assets/js/jquery.nav.js"></script>	
+		<!-- slicknav JS -->			
+		<script src="/assets/js/jquery.slicknav.js"></script>			
+		<!-- stellar js -->
+		<script src="/assets/js/jquery.stellar.min.js"></script>		
+		<!-- countTo js -->
+		<script src="/assets/js/jquery.inview.min.js"></script>				
+		<!-- owl-carousel min js  -->
+		<script src="/assets/owlcarousel/js/owl.carousel.min.js"></script>		
+		<!-- jquery mixitup min js -->
+		<script src="/assets/js/jquery.mixitup.js"></script>		
+		<!-- jquery venobox min js -->
+		<script src="/assets/js/venobox.min.js"></script>		
+		<!-- scrolltopcontrol js -->
+		<script src="/assets/js/scrolltopcontrol.js"></script>
+		<!-- MAGNIFICANT JS -->
+		<script src="/assets/js/jquery.magnific-popup.min.js"></script>				
+		<!-- jquery appear js -->			
+		<script src="/assets/js/jquery.appear.js"></script>	
+		<!-- slick js -->		
+		<script src="/assets/js/slick.js"></script>			
+		<!-- WOW - Reveal Animations When You Scroll -->
+		<script src="/assets/js/wow.min.js"></script>	
+		<!-- switcher js -->				
+		<script src="/assets/js/switcher.js"></script>					
+		<!-- scripts js -->
+		<script src="/assets/js/scripts.js"></script>
+
+		<script>
+			function openBtn(me, btn) {
+				var id = "#"+me;
+				var bouton = document.querySelector(id);
+				var status = bouton.dataset.status;
+				
+				if(status == "close") {
+					bouton.dataset.status = 'open';
+					var btn_id = '#'+btn;
+					document.querySelector(btn_id).innerHTML = "<svg width='20' height='20' viewBox='0 0 16 10'><path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.042' d='M15.516 9.153L8.28.976a.325.325 0 00-.487 0L.557 9.153'></path></svg>";
+					var answer_id = "#"+bouton.dataset.answer;
+					document.querySelector(answer_id).style.display = "block";
+				
+				} else {
+					bouton.dataset.status = 'close';
+					var btn_id = '#'+btn;
+					document.querySelector(btn_id).innerHTML = "<svg width='20' height='20' viewBox='0 0 16 10'><path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.042' d='M.564.861l7.222 8.164a.325.325 0 00.459.027l.028-.027L15.496.86'></path></svg>";
+					var answer_id = "#"+bouton.dataset.answer;
+					document.querySelector(answer_id).style.display = "none";
+				}
+			}
+		</script>
+
+
+
+    </body>
+</html>

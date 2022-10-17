@@ -1,0 +1,78 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Ajouter un client | JVGO{% endblock %}
+
+{% block body %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h2 style="font-size: 24px; font-weight: 700;">Nouveau client</h2>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-md-12">
+                <form role="form" method="post" action="" enctype="multipart/form-data">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <!-- Dossier -->
+                            <div class="form-group">
+                                <label>Numéro de dossier *</label>
+                                <input type="text" name="numero" class="form-control" placeholder="Numéro du dossier" value="00{{numero}}2022" required/>
+                            </div>
+
+                            <!-- Nom -->
+                            <div class="form-group">
+                                <label>Nom du client *</label>
+                                <input type="text" name="nom" class="form-control" placeholder="Le nom du client" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="L'adresse email du client" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Numéro de téléphone</label>
+                                <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Le numéro de téléphone du client" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Mot de passe *</label>
+                                <input type="password" name="password" class="form-control" placeholder="Le mot de passe" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Entreprise</label>
+                                <input type="text" name="entreprise" placeholder="Le nom de son entreprise" class="form-control"/>
+                            </div>
+              
+                            <div class="form-group">
+                                <label>Statut du dossier *</label>
+                                <select name="statut" class="form-control" required>
+                                    <option value="" disabled selected hidden>-- Choisir --</option>
+                                    <option value="1">Demande envoyer</option>
+                                    <option value="2">Demande en cours de traitement</option>
+                                    <option value="3">Terminer</option>
+                                </select>
+                            </div>
+                                
+                        </div>
+
+                        <div class="col-md-12 text-left mt-3" style="margin-bottom: 3%">
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </div>
+                    </div><!-- /.row (main row) -->
+                </form>
+            </div>
+        </div><!-- /.row (main row) -->
+
+    </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+{% endblock %}

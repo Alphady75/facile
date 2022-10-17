@@ -1,0 +1,75 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Modifier un client | JVGO{% endblock %}
+
+{% block body %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h2 style="font-size: 24px; font-weight: 700;">Nouveau client</h2>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-md-12">
+                <form role="form" method="post" action="" enctype="multipart/form-data">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <!-- Dossier -->
+                            <div class="form-group">
+                                <label>Numéro de dossier *</label>
+                                <input type="text" name="numero" class="form-control" placeholder="Numéro du dossier" value="{{user.numero}}" required/>
+                            </div>
+
+                            <!-- Nom -->
+                            <div class="form-group">
+                                <label>Nom du client *</label>
+                                <input type="text" name="nom" class="form-control" placeholder="Le nom du client" value="{{user.nom}}" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="L'adresse email du client" value="{{user.email}}" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Numéro de téléphone</label>
+                                <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Le numéro de téléphone du client" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Entreprise</label>
+                                <input type="text" name="entreprise" placeholder="Le nom de son entreprise" value="{{user.entreprise}}" class="form-control"/>
+                            </div>
+              
+                            <div class="form-group">
+                                <label>Statut du dossier *</label>
+                                <select name="statut" class="form-control" required>
+                                    <option value="" disabled selected hidden>-- Choisir --</option>
+                                    <option value="En création" {{user.statut == 'En création' ? 'selected' : ''}}>En création</option>
+                                    <option value="Formalité notaire" {{user.statut == 'Formalité notaire' ? 'selected' : ''}}>Formalité notaire</option>
+                                    <option value="Formalité comptable" {{user.statut == 'Formalité comptable' ? 'selected' : ''}}>Formalité comptable</option>
+                                    <option value="Demande d'immatriculation" {{user.statut == 'Demande d\'immatriculation' ? 'selected' : ''}}>Demande <br>d'immatriculation</option>
+                                    <option value="Dépôt au moniteur belge" {{user.statut == 'Dépôt au moniteur belge' ? 'selected' : ''}}>Dépôt au moniteur belge</option>
+                                </select>
+                            </div>
+                                
+                        </div>
+
+                        <div class="col-md-12 text-left mt-3" style="margin-bottom: 3%">
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </div>
+                    </div><!-- /.row (main row) -->
+                </form>
+            </div>
+        </div><!-- /.row (main row) -->
+
+    </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+{% endblock %}

@@ -1,0 +1,700 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil | JVGO Business Builder{% endblock %}
+
+{% block stylesheets %}
+
+    <style>
+        .phone-icon {
+            position: relative;
+            height: 65px;
+            width: 65px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .phone-icon:before {
+            position: absolute;
+            top: 50%;
+            left: -77px;
+            width: 57px;
+            height: 1px;
+            content: "";
+            background-color: rgba(var(--oslim-white-rgb), .20);
+            transform: translateY(-50%);
+            background-color: white;
+        }
+
+        .phone-icon:after {
+            position: absolute;
+            top: 50%;
+            right: -77px;
+            width: 57px;
+            height: 1px;
+            content: "";
+            background-color: rgba(var(--oslim-white-rgb), .20);
+            transform: translateY(-50%);
+            background-color: white;
+        }
+
+        .form-control {
+            padding: 10px 15px;
+            border-radius: 4px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #f4f5f8;
+            border-color: #f4f5f8;
+        }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+
+<!-- START HOME -->
+<section id="home" class="welcome-area">
+    <div class="welcome-slider-area">
+        <div id="welcome-slide-carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <div class="single-slide-item" style="background-image: url(/assets/img/61206588_m.jpg); background-position: center; background-size: cover;">
+                        <div class="single-slide-item-table">
+                            <div class="single-slide-item-tablecell">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12 text-center">
+                                            <h2>CREATION D’ENTREPRISE</h2>
+                                            <p class="lead">Nous vous accompagnons dans les différentes étapes<br> de la création de votre entreprise</p>
+                                            <a class="btn-home-border" href="#contact" style="margin-left: auto; margin-right: auto;">CONSULTATION GRATUITE <i class="ti-arrow-right"></i></a>								
+                                        </div>     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+                </div>
+                <div class="carousel-item">
+                    <div class="single-slide-item" style="background-image: url(/assets/img/61206588_m.jpg); background-position: center; background-size: cover;">
+                        <div class="single-slide-item-table">
+                            <div class="single-slide-item-tablecell">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12 text-center">
+                                            <h2>OPTIMISATION FISCALE</h2>
+                                            <p class="lead">Nous vous aidons à trouver la meilleure solution<br> pour payer légalement moins d’impôts</p>
+                                            <a class="btn-home-border" href="#contact" style="margin-left: auto; margin-right: auto;">CONSULTATION GRATUITE <i class="ti-arrow-right"></i></a>								
+                                        </div>     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+                </div>
+                <div class="carousel-item">
+                    <div class="single-slide-item" style="background-image: url(/assets/img/61206588_m.jpg); background-position: center; background-size: cover;">
+                        <div class="single-slide-item-table">
+                            <div class="single-slide-item-tablecell">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12 text-center">
+                                            <h2>COMPTABILITE</h2>
+                                            <p class="lead">Nous facilitons la gestion économique de votre société <br>et vous restez concentré sur votre core business</p>
+                                            <a class="btn-home-border" href="#contact" style="margin-left: auto; margin-right: auto;">CONSULTATION GRATUITE <i class="ti-arrow-right"></i></a>								
+                                        </div>     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+                </div>
+                <div class="carousel-item">
+                    <div class="single-slide-item" style="background-image: url(/assets/img/61206588_m.jpg); background-position: center; background-size: cover;">
+                        <div class="single-slide-item-table">
+                            <div class="single-slide-item-tablecell">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12 text-center">
+                                            <h2>COACHING</h2>
+                                            <p class="lead">Une prise de recul très utile pour améliorer la gestion <br>d’une équipe et le bien-être de chacun</p>
+                                            <a class="btn-home-border" href="#contact" style="margin-left: auto; margin-right: auto;">CONSULTATION GRATUITE <i class="ti-arrow-right"></i></a>								
+                                        </div>     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+                </div>
+            </div>
+					
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#welcome-slide-carousel" role="button" data-slide="prev">
+            <i class="fas fa-long-arrow-alt-left" aria-hidden="true"></i>
+            </a>
+            <a class="carousel-control-next" href="#welcome-slide-carousel" role="button" data-slide="next">
+            <i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>
+            </a>	
+        </div>
+    </div>
+</section>
+<!-- END  HOME DESIGN -->	
+
+<!-- START BLOG -->		
+<section id="services" class="fresh-news section-padding">
+    <div class="container">
+        <div class="section-title text-center wow zoomIn">
+            <h2 style="text-transform: uppercase;">Ce que nous faisons pour vous</h2>
+            <p><strong>JVGO vous accompagne dans la gestion économique de votre société</strong> pour que vous restiez
+                concentré sur votre core business. De la création de votre entreprise à l’optimisation fiscale en
+                passant par la préparation du business plan ou le coaching d’équipe.
+            </p>	
+        </div>				
+        <div class="row">					
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                <div class="single_blog" style="padding: 10px;">
+                    <div class="blog_img" style="border-radius: 50%">
+                        <a href="{{path('services')}}#creation">
+                            <div style="width: 100%; background: linear-gradient(rgba(195, 146, 142, 0.7), rgba(195, 146, 242, 0.7)), url(assets/img/creation.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; position: relative; height: 0; padding-bottom: 100%;" class="bg-hover">
+                                <div style="text-align: center; color: white; padding: 10px; width: 100%; margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                                    <i class="ti-bag" style="font-size: 40px;"></i>
+                                    <h3 style="color: white; margin-top: 10px; font-size: 26px;">CREATION D'ENTREPRISES</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- END COL-->
+                                
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                <div class="single_blog" style="padding: 10px;">
+                    <div class="blog_img" style="border-radius: 50%">
+                        <a href="{{path('services')}}#fiscalite">
+                            <div style="width: 100%; background: linear-gradient(rgba(230, 248, 56, 0.7), rgba(230, 248, 56, 0.7)), url(assets/img/optimisation.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; position: relative; height: 0; padding-bottom: 100%;" class="bg-hover">
+                                <div style="text-align: center; color: white; padding: 10px; width: 100%; margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                                    <i class="ti-stats-up" style="font-size: 40px;"></i>
+                                    <h3 style="color: white; margin-top: 10px; font-size: 26px;">OPTIMISATION FISCALE</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- END COL-->
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                <div class="single_blog" style="padding: 10px;">
+                    <div class="blog_img" style="border-radius: 50%">
+                        <a href="{{path('services')}}#comptabilite">
+                            <div style="width: 100%; background: linear-gradient(rgba(75, 197, 245, 0.7), rgba(75, 197, 245, 0.7)), url(assets/img/coaching.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; position: relative; height: 0; padding-bottom: 100%;" class="bg-hover">
+                                <div style="text-align: center; color: white; padding: 10px; width: 100%; margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                                    <i class="ti-blackboard" style="font-size: 40px;"></i>
+                                    <h3 style="color: white; margin-top: 10px; font-size: 26px;">COMPTABILITE</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- END COL-->
+                                
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                <div class="single_blog" style="padding: 10px;">
+                    <div class="blog_img" style="border-radius: 50%">
+                        <a href="{{path('services')}}#coaching">
+                            <div style="width: 100%; background: linear-gradient(rgba(37, 243, 199, 0.7), rgba(37, 243, 199, 0.7)), url(assets/img/business.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; position: relative; height: 0; padding-bottom: 100%;" class="bg-hover">
+                                <div style="text-align: center; color: white; padding: 10px; width: 100%; margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                                    <i class="ti-notepad" style="font-size: 40px;"></i>
+                                    <h3 style="color: white; margin-top: 10px; font-size: 26px;">COACHING</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- END COL-->
+        </div><!-- END ROW -->
+    </div><!-- END CONTAINER -->	
+</section>
+<!-- END BLOG -->
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row pt-5 pb-5" style="background: #434859; color: white; padding-left: 10px; padding-right: 10px; border-radius: 4px;">
+            <div class="col-lg-4 col-xs-12 col-md-4 text-sm-left text-center">
+                <h3 style="color: white">Obtenez votre <br> Consultation <span style="font-weight: bold">gratuite</span></h3>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-md-4 text-center mb-4 mb-sm-0 mt-4 mt-sm-0">   
+                <div class="phone-icon">
+                    <i class="lnr lnr-phone-handset" style="color: black; font-weight: bold; font-size: 25px;"></i>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-md-4 text-sm-right text-center">
+                <a href="tel:+32477506867" style="font-size: 1.75rem; color: white">+32 (0)4 775 068 67</a><br>
+                <a href="mailto:contact@jvgo.be" style="font-size: 20px; color: white; font-weight: 500; ">contact@jvgo.be</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- START ABOUT US -->
+<section id="about" class="about_us section-padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+                <div class="about_img d-none d-sm-block">
+                    <img src="assets/img/about.jpg" alt="about image">		
+                </div>					
+            </div><!--- END COL -->
+            
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+                <div class="about-content">						
+                    <div class="section-title text-left">	
+                        <span style="margin-left: 30px;">Qui sommes-nous? </span>								
+                        <h2>JVGO Business Builder</h2>	
+                    </div>
+                    <div class="d-block d-sm-none mb-4">
+                        <img src="assets/img/about.jpg" alt="about image">		
+                    </div>
+                    <p>Notre entreprise, basée à <strong>Bruxelles</strong>, a pour objectif de vous aider à la <strong>création d’entreprise</strong>, au <strong>coaching d’équipe</strong>, à <strong>optimiser la fiscalité</strong> en vous proposant une délocalisation de vos activités pour vous permettre de <strong>payer moins d’impôt</strong> légalement et en fonction de la divergence des législations des pays européens.</p>																	
+					<br>
+                    <a href="{{path('about')}}" class="btn-home-border mt-2">Voir plus <i class="ti-plus"></i></a>	
+                </div>
+            </div><!--- END COL -->										
+                                    
+        </div><!--- END ROW -->		
+    </div><!--- END CONTAINER -->
+</section>
+<!-- END ABOUT US -->
+
+<!-- START COUNDOWN --> 
+<!--
+<section class="counter_feature">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                <div class="counter">				
+                    <i class="ti-bag"></i>				
+                    <div class="counter_content pull-left">
+                        <h2 class="timer">2500</h2>  
+                        <span>Projets terminés</span>
+                    </div>
+                </div>
+            </div>   
+            
+            <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                <div class="counter">				
+                    <i class="ti-write"></i>				
+                    <div class="counter_content pull-left">
+                        <h2 class="timer">28253</h2>  
+                        <span>Projet en cours</span>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+                <div class="counter">				
+                    <i class="ti-cup"></i>				
+                    <div class="counter_content pull-left">
+                        <h2 class="timer">1296</h2>  
+                        <span>Prix remporté</span>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+                <div class="counter">				
+                    <i class=" ti-user "></i>				
+                    <div class="counter_content pull-left">
+                        <h2 class="timer">2000</h2>  
+                        <span>Clients satisfaits</span>
+                    </div>
+                </div>
+            </div>                
+    </div>
+</div>
+</section>
+-->
+<!-- END COUNDOWN -->	
+
+<!-- START TESTIMONIAL -->
+<!--
+<section class="testimonial-area section-padding">
+    <div class="container">												
+        <div class="section-title text-left wow zoomIn">
+            <span>Avis des personnes</span>	
+            <h2>Ce que dit le client</h2>
+        </div>						
+        <div class="row">								
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div id="testimonial-slider" class="owl-carousel">
+                    <div class="single_testimonial">
+                        <div class="testi_img">
+                            <i class="ti-quote-left"></i>
+                            <img src="https://getmasum.com/html-preview/jabal/assets/img/testimonial/1.jpg" class="img-fluid" alt="" />			
+                        </div>
+                        <div class="test_content">	
+                            <p>Nous souhaitions être accompagnés pour la création de notre nouvelles filiale en Belgique. La proposition de JVGO par rapport à la meilleure forme juridique adaptée à notre projet de société a su faire la différence suite à notre appel d’offres, par la clarté de l’analyse de nos besoins et le sérieux de la méthode proposée. Ecoute, pertinence, échanges et professionnalisme ont constitué les jalons d’une mission menée efficacement, avec pragmatisme et discernement.</p>							
+                            <h3>Anais Belagii</h3>
+                            <span>Directeur des opérations, OTIXX</span>
+                        </div>
+                    </div>
+                    
+                    <div class="single_testimonial">
+                        <div class="testi_img">
+                            <i class="ti-quote-left"></i>
+                            <img src="https://getmasum.com/html-preview/jabal/assets/img/testimonial/2.jpg" class="img-fluid" alt="" />			
+                        </div>
+                        <div class="test_content">	
+                            <p>Nous avons fait appel à JVGO  pour nous aider à élaborer la stratégie la plus pertinente pour la création de notre start-up et notre arrivée sur le marché. En quelques mois, notre projet a aboutit à une version ultra-complète de ce que nous avons à faire, positionnement, offre, valeur ajoutée, facteurs différenciants, marché cible, action à mener et perspective sur les 3 prochaines années et plus. Un accompagnement au top, aligné avec nos valeurs et attentes, sans eux nous n’en serions pas là aujourd’hui et nous envisageons l’avenir avec beaucoup d’excitation. Certaines rencontres nous inspirent, jvgo en fait partie.</p>
+                            <h3>Edouard Lioris N.</h3>
+                            <span>Manager, Scale srl</span>
+                        </div>
+                    </div>
+                    
+                    <div class="single_testimonial">
+                        <div class="testi_img">
+                            <i class="ti-quote-left"></i>
+                            <img src="https://getmasum.com/html-preview/jabal/assets/img/testimonial/3.jpg" class="img-fluid" alt="" />
+                        </div>	
+                        <div class="test_content">
+                            <p>L’équipe jvgo nous a accompagnés vers notre objectif d’optimisation de notre fiscalité et leur expertise a joué un rôle déterminant d’accélérateur de projet.  Nous profitons aujourd'hui de tous les instruments juridiques légaux nous permettant d’optimiser notre fiscalité et savons pouvoir compter sur les avis éclairés de l’équipe jvgo que nous remercions pour sa valeur plus qu’ajoutée!</p>
+                            <h3>Caroline lebras</h3>
+                            <span>Gérante, GBD Export</span>
+                        </div>								
+                    </div>							
+                </div>  
+            </div>		  
+        </div>
+    </div>
+</section>
+-->
+<!-- END TESTIMONIAL -->
+
+<section class="section-padding" style="background: #F5FBF9;">
+    <div class="container">
+        <div class="row pt-5 pb-5" style="background: #434859; color: white; padding-left: 10px; padding-right: 10px; border-radius: 4px;">
+            <div class="col-lg-4 col-xs-12 col-md-4 text-sm-left text-center">
+                <h3 style="color: white">Obtenez votre <br> Consultation <span style="font-weight: bold">gratuite</span></h3>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-md-4 text-center mb-4 mb-sm-0 mt-4 mt-sm-0">   
+                <div class="phone-icon">
+                    <i class="lnr lnr-phone-handset" style="color: black; font-weight: bold; font-size: 25px;"></i>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-md-4 text-sm-right text-center">
+                <a href="tel:+32477506867" style="font-size: 1.75rem; color: white">+32 (0)4 775 068 67</a><br>
+                <a href="mailto:contact@jvgo.be" style="font-size: 20px; color: white; font-weight: 500; ">contact@jvgo.be</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- START TEAM -->
+<section id="team" class="team-area section-padding">
+    <div class="container">									
+        <div class="section-title text-left wow zoomIn">	
+            <h2>Notre équipe</h2>
+        </div>				
+        <div class="row text-center">								
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                <div class="our-team">
+                    <div class="single-team">
+                        <div class="team-img">
+                            <div style="background: url(/assets/img/team/ToudjeJosias.png); width: 100%; height: 290px; background-size: cover; background-position: top;"></div>
+                            <ul class="team-social">
+                                <li><a href="#" class="ti-facebook facebook"></a></li>
+                                <li><a href="#" class="ti-linkedin twitter"></a></li>
+                            </ul>
+                        </div>	
+                        <p>Juriste Fiscaliste</p>
+                        <h3>Josias Toudje</h3>
+                        <p>(Co-founder)</p>	
+                    </div>	
+                                            
+                </div><!--- END OUR TEAM -->						
+            </div><!--- END COL -->	
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                <div class="our-team">
+                    <div class="single-team">
+                        <div class="team-img">
+                            <div style="background: url(/assets/img/team/ValerieDecoste.jpg); width: 100%; height: 290px; background-size: cover; background-position: top;"></div>
+                            <ul class="team-social">
+                                <li><a href="#" class="ti-facebook facebook"></a></li>
+                                <li><a href="#" class="ti-linkedin twitter"></a></li>
+                            </ul>
+                        </div>
+                        <p>Office Coordinator</p>
+                        <h3>Valérie De Coster</h3>	
+                        <p>(Co-founder)</p>							
+                    </div>										
+                </div><!--- END OUR TEAM -->						
+            </div><!--- END COL -->	
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                <div class="our-team">
+                    <div class="single-team">
+                        <div class="team-img">
+                            <div style="background: url(/assets/img/team/Dorothyoger.jpeg); width: 100%; height: 290px; background-size: 80%; background-position: top; background-repeat: no-repeat"></div>
+                            <ul class="team-social">
+                                <li><a href="#" class="ti-facebook facebook"></a></li>
+                                <li><a href="#" class="ti-linkedin twitter"></a></li>
+                            </ul>
+                        </div>	
+                        <p>Consultante, Coach PNL</p>
+                        <h3>Dorothy Over</h3>
+                        
+                    </div>							
+                </div><!--- END OUR TEAM -->						
+            </div><!--- END COL -->		
+                                        
+        </div><!--- END ROW -->
+    </div><!--- END CONTAINER -->
+</section>
+<!-- END TEAM -->
+
+<!-- START PARTNER LOGO -->
+<!--
+<div class="partner-logo" style="padding-top: 100px;">
+    <div class="container">								
+        <div class="section-title text-left wow zoomIn">
+            <span>Nos partenaires</span>	
+            <h2>Nous travaillons depuis des années</h2>
+        </div>															
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo single_logo_bm">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/05/10.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/05/11.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo single_logo_bm">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/05/12.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/05/13.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/06/29.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/06/30.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/06/25.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+        </div>
+    </div>	
+</div>
+-->
+<!-- END PARTNER LOGO -->
+
+<!-- START Contact Us AREA -->		
+<section id="contact" class="contact-us section-padding">
+    <div class="container">				
+        <div class="row align-items-center">					
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 mb-sm-0 mb-3" style="border-radius: 8px; background-color: white; padding-bottom: 15px; box-shadow: 0px 80px 120px -40px rgb(0 0 0 / 24%); transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;">
+                <div class="section-title text-left wow zoomIn">	
+                    <h2 style="text-transform: uppercase; font-size: 25px; line-height: 2rem;">RÉSERVEZ VOTRE CONSULTATION<br> GRATUITE MAINTENANT</h2>
+                </div>	
+                <form class="contact-form" name="enq" method="post" action="{{path('home')}}" onsubmit="return validation();">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Entrer votre nom complet *" required="required">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Entrer votre adresse email *" required="required">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="phone" class="form-control" placeholder="Entrer votre votre numéro de téléphone *" required="required">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="subject" class="form-control" placeholder="Indiquer les prestations souhaiter *" required="required">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea rows="6" name="message" class="form-control" placeholder="Décrivez votre demande" required="required"></textarea>
+                        </div>
+                        <div class="col-md-12 text-left">
+                            <button type="submit" value="Send message" name="submit" class="btn-home-border" title="Submit Your Message!">Envoyer</button>
+                        </div>
+                    </div>
+                </form>							
+            </div><!-- END COL-->
+            
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                <div class="single-contact">
+                    <i class="ti-location-pin"></i>
+                    <div class="contact-content">
+                        207 Avenue Louise,<br>
+                        1050 Bruxelles, BELGIQUE
+                    </div>
+                </div><!-- END single-contact -->	
+
+                <div class="single-contact">
+                    <i class="ti-email"></i>
+                    <div class="contact-content" style="margin-top: 15px;">
+                        contact@jvgo.be
+                    </div>
+                </div><!-- END single-contact -->		
+
+                <div class="single-contact">
+                    <i class="fa fa-phone"></i>
+                    <div class="contact-content" style="margin-top: 15px;">
+                        <a href="tel:+32477506867">+32 (0)4 775 068 67</a>
+                    </div>
+                </div><!-- END single-contact -->									
+            </div><!-- END Col -->
+        </div><!-- END ROW -->
+    </div><!-- END CONTAINER -->	
+</section>
+<!-- END Contact Us -->
+
+
+<!-- START BLOG -->		
+<section id="blog" class="fresh-news section-padding">
+    <div class="container">
+        <div class="section-title text-center wow zoomIn">
+			<h2>Actualités</h2>	
+        </div>				
+        <div class="row">	
+            {% for article in articles %}
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                    <div class="single_blog">
+                        <div class="blog_img">
+                            <a href="{{path('article', {id : article.id, slug : article.slug})}}"><img src="/article/{{article.imageName}}" class="img-fluid" alt="image" /></a>
+                        </div>
+                        <div class="blog_content">
+                            <span class="blog_cat">
+                                <a href="javascript:void(0);">JVGO</a>
+                            </span>
+                            <h3><a href="{{path('article', {id : article.id, slug : article.slug})}}">{{article.titre}}</a></h3>								
+                            <div class="blog-meta">
+                                <span class="blog-author">
+                                    <a href="{{path('article', {id : article.id, slug : article.slug})}}">{{article.description | striptags | slice(0, 25) |raw }}...</a>
+                                </span> <br>
+                                <span class="blog-date">{{article.createdAt | date('d/m/Y')}}</span>								
+                            </div>
+                            <a href="{{path('article', {id : article.id, slug : article.slug})}}" class="blog_btn"><i class="ti-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div><!-- END COL-->	
+            {% endfor %}
+        </div><!-- END ROW -->
+    </div><!-- END CONTAINER -->	
+</section>
+<!-- END BLOG -->
+
+<!-- START FAQ -->
+<!--
+<div class="partner-logo" style="padding-top: 100px;">
+    <div class="container">								
+        <div class="section-title text-left wow zoomIn">
+            <span>Les questions fréquemment posées</span>
+            <h2>FAQ</h2>
+        </div>															
+        <div class="row text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                
+                <div style="text-align: left;">
+
+                    <div class="faq-item">
+                        <div class="question-wrapper" onclick="openBtn('q1', 'btn-q1')" id="q1" data-status="close" data-answer="a1">
+                            <h4 class="question">Qu'est-ce qu'une Agence de marketing numérique fait réellement ?</h4>
+                            <div class="button-wrapper">
+                                <button type="button" class="chevron-button" id="btn-q1"><svg width="20" height="20" viewBox="0 0 16 10"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.042" d="M.564.861l7.222 8.164a.325.325 0 00.459.027l.028-.027L15.496.86"></path></svg></button>
+                            </div>
+                        </div>
+                        <div id="a1" class="answer-wrapper false">
+                            <div class="answer text-muted">Ils évalueront le trafic généré par votre site Web et établiront les meilleures plateformes de marketing en ligne dans lesquelles investir. Une partie de la stratégie d'une agence de marketing numérique devrait impliquer une évaluation continue pour s'assurer qu'un client maintient l'équilibre parfait entre ses dépenses marketing et les résultats qu'il obtient. reçois.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question-wrapper" onclick="openBtn('q2', 'btn-q2')" id="q2" data-status="close" data-answer="a2">
+                            <h3 class="question">Quel est le format des cours en ligne ?  </h3>
+                            <div class="button-wrapper">
+                                <button type="button" class="chevron-button" id="btn-q2"><svg width="20" height="20" viewBox="0 0 16 10"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.042" d="M.564.861l7.222 8.164a.325.325 0 00.459.027l.028-.027L15.496.86"></path></svg></button>
+                            </div>
+                        </div>
+                        <div id="a2" class="answer-wrapper false">
+                            <div class="answer text-muted">Le programme de chaque cours en ligne est conçu par le mentor. Chaque cours est composé de différentes leçons en vidéo d’environ 5 à 20 minutes en moyenne. Chaque Masterclass comprend une durée entre 1h30 et 3h30. </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question-wrapper" onclick="openBtn('q3', 'btn-q3')" id="q3" data-status="close" data-answer="a3">
+                            <h3 class="question">Sur quels appareils puis-je visionner mes cours en ligne ?  </h3>
+                            <div class="button-wrapper">
+                                <button type="button" class="chevron-button" id="btn-q3"><svg width="20" height="20" viewBox="0 0 16 10"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.042" d="M.564.861l7.222 8.164a.325.325 0 00.459.027l.028-.027L15.496.86"></path></svg></button>
+                            </div>
+                        </div>
+                        <div id="a3" class="answer-wrapper false">
+                            <div class="answer text-muted">Vous pouvez visionner votre cours en ligne sur votre ordinateur, votre tablette, et votre smartphone. Pour profiter au maximum de la qualité de tournage dans les conditions d’une série Netflix par exemple, nous vous recommandons l’écran le plus grand possible, c’est à dire votre ordinateur. </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question-wrapper" onclick="openBtn('q4', 'btn-q4')" id="q4" data-status="close" data-answer="a4">
+                            <h3 class="question">Combien ai-je de temps pour visionner mes cours ?  </h3>
+                            <div class="button-wrapper">
+                                <button type="button" class="chevron-button" id="btn-q4"><svg width="20" height="20" viewBox="0 0 16 10"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.042" d="M.564.861l7.222 8.164a.325.325 0 00.459.027l.028-.027L15.496.86"></path></svg></button>
+                            </div>
+                        </div>
+                        <div id="a4" class="answer-wrapper false">
+                            <div class="answer text-muted">Concernant le Pass illimité, pour accéder à tous les cours en ligne de MentorShow et ceux ajoutés ultérieurement, vous avez accès à tous les cours jusqu’à l’annulation de votre abonnement.  </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question-wrapper" onclick="openBtn('q5', 'btn-q5')" id="q5" data-status="close" data-answer="a5">
+                            <h3 class="question">Quelle est votre politique de remboursement ? </h3>
+                            <div class="button-wrapper">
+                                <button type="button" class="chevron-button" id="btn-q5"><svg width="20" height="20" viewBox="0 0 16 10"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.042" d="M.564.861l7.222 8.164a.325.325 0 00.459.027l.028-.027L15.496.86"></path></svg></button>
+                            </div>
+                        </div>
+                        <div id="a5" class="answer-wrapper false">
+                            <div class="answer text-muted">Nous ne voulons que des clients satisfaits. Si vous changez d’avis, il suffit d’un simple email, nous vous offrons un remboursement intégral jusqu’à 14 jours après la date de votre achat. </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question-wrapper" onclick="openBtn('q6', 'btn-q6')" id="q6" data-status="close" data-answer="a6">
+                            <h3 class="question">Comment offrir le Pass illimité ? </h3>
+                            <div class="button-wrapper">
+                                <button type="button" class="chevron-button" id="btn-q6"><svg width="20" height="20" viewBox="0 0 16 10"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.042" d="M.564.861l7.222 8.164a.325.325 0 00.459.027l.028-.027L15.496.86"></path></svg></button>
+                            </div>
+                        </div>
+                        <div id="a6" class="answer-wrapper false">
+                            <div class="answer text-muted">E-Card disponible dès maintenant pour faire plaisir à un proche. C’est simple et rapide : Étape 1 : Cliquez sur « Offrir le Pass ». Étape 2 : Inscrivez-vous ou connectez-vous à votre compte. Étape 3 : Indiquez les informations du destinataire et programmez la date d’envoi du cadeau. Étape 4 : Remplissez vos infirmations de paiement. Étape 5 : Votre proche reçoit son cadeau à la date indiquée lors de l’étape 3. </div>
+                        </div>
+                    </div>
+
+                </div>					
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<!-- END FAQ -->
+		
+{% endblock %}

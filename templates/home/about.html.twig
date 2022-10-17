@@ -1,0 +1,438 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos | JVGO Business Builder{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .phone-icon {
+            position: relative;
+            height: 65px;
+            width: 65px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .phone-icon:before {
+            position: absolute;
+            top: 50%;
+            left: -77px;
+            width: 57px;
+            height: 1px;
+            content: "";
+            background-color: rgba(var(--oslim-white-rgb), .20);
+            transform: translateY(-50%);
+            background-color: white;
+        }
+
+        .phone-icon:after {
+            position: absolute;
+            top: 50%;
+            right: -77px;
+            width: 57px;
+            height: 1px;
+            content: "";
+            background-color: rgba(var(--oslim-white-rgb), .20);
+            transform: translateY(-50%);
+            background-color: white;
+        }
+
+        .chevron-down {
+            animation: updown 2s ease infinite;
+        }
+
+        @keyframes updown {
+            0% {
+                transform: translateY(-50%);
+            }
+
+            50% {
+                transform: translateY(50%);
+            }
+
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+
+        .form-control {
+            padding: 10px 15px;
+            border-radius: 4px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #f4f5f8;
+            border-color: #f4f5f8;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+<!-- START HOME -->
+<section class="welcome-area">
+    <div class="welcome-slider-area">
+        <div id="welcome-slide-carousel" class="carousel slide">
+            <div class="single-slide-item" style="background-image: url(/assets/img/61206588_m.jpg); background-position: center; background-size: cover;">
+                <div class="single-slide-item-table">
+                    <div class="single-slide-item-tablecell">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-12 text-center">
+                                    <h2>Qui sommes-nous?</h2>
+                                    <a href="#about"><i class="fa fa-chevron-down chevron-down" style="color: white;"></i></a>								
+                                </div>     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>	      
+        </div>
+    </div>
+</section>
+<!-- END  HOME DESIGN -->	
+
+<!-- START ABOUT US -->
+<section id="about" class="about_us section-padding" style="background-image: url(assets/img/bg-blob-gradient.svg); background-position: left; background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+
+        <div class="row align-items-center mt-2">
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+                <div class="about-content">						
+                    <div class="section-title text-left">									
+                        <h3>VALEURS</h3>	
+                    </div>
+                    <div class="d-block d-sm-none mb-4">
+                        <img src="assets/img/about.jpg" alt="about image">		
+                    </div>
+                    <ul style="list-style: inherit; padding-left: 15px;">
+                        <li><strong style="font-size: 18px;">Transparence</strong> : Vous recevez des informations claires et concrètes, dès le début, tant sur la tarification que sur les délais d'exécution. Vous avez accès à votre dossier dont vous pouvez suivre la progression en temps réel.</li>
+                        
+	                    <li><strong style="font-size: 18px;">Croissance</strong> : Nous vous aidons à grandir sur le plan professionnel mais aussi sur le plan personnel. Car un business qui évolue, cela implique des êtres humains prêts à se dépasser et nous chercherons nous-même aussi à progresser.</li>
+	                    
+                        <li><strong style="font-size: 18px;">Fidélité</strong> : Être fidèle à soi, aux autres, à ses convictions, à ses engagements et à ses désirs profonds est, selon nous, la base indispensable pour créer une relation saine et durable avec toutes les personnes qui nous entourent.</li>
+                    </ul>
+                    <a href="#contact" class="btn-home-border mt-2">CONSULTATION GRATUITE <i class="ti-arrow-right"></i></a>
+                </div>
+            </div><!--- END COL -->	
+
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+                <div class="about_img d-none d-sm-block">
+                    <img src="assets/img/about.jpg" alt="about image" style="border-radius: 8px">		
+                </div>					
+            </div><!--- END COL -->									             
+        </div><!--- END ROW -->	
+
+        <div class="row align-items-center mt-3">
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+                <div class="about_img d-none d-sm-block">
+                    <img src="assets/img/vvv-min.jpg" alt="about image" style="border-radius: 8px">		
+                </div>					
+            </div><!--- END COL -->	
+
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+                <div class="about-content">						
+                    <div class="section-title text-left">									
+                        <h3>MISSION</h3>	
+                    </div>
+                    <div class="d-block d-sm-none mb-4">
+                        <img src="assets/img/vvv-min.jpg" alt="about image">		
+                    </div>
+                    <ul style="ist-style: inherit;">
+                        <li>Vous écouter, <strong>vous donner des conseils personnalisés</strong></li>
+                        
+	                    <li>Créer avec vous <strong>un business sur mesure qui corresponde à vos valeurs et à vos ambitions</strong></li>
+	                    
+                        <li><strong>Vous accompagner à différents stades de votre business</strong> : définir vos objectifs, engager du personnel, gérer une équipe, se développer à l'international</li>
+                    </ul>
+                    <a href="#contact" class="btn-home-border mt-2">CONSULTATION GRATUITE <i class="ti-arrow-right"></i></a>
+                </div>
+            </div><!--- END COL -->									             
+        </div><!--- END ROW -->	
+
+        <div class="row align-items-center mt-5">
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+                <div class="about-content">						
+                    <div class="section-title text-left">									
+                        <h3>VISION</h3>	
+                    </div>
+                    <div class="d-block d-sm-none mb-4">
+                        <img src="assets/img/vv-min.jpg" alt="about image">		
+                    </div>
+                    <ul style="ist-style: inherit;">
+                        <li>Nous voulons <strong>des entrepreneurs qui se sentent libres</strong> de pouvoir travailler où, quand et comment ils veulent.</li>
+                        
+                        <li><strong>Un business qui fonctionne bien</strong>, cela <strong>rend les gens heureux</strong> : clients, employés, employeurs, collaborateurs, investisseurs …</li>
+                    </ul>
+                    <a href="#contact" class="btn-home-border mt-2">CONSULTATION GRATUITE <i class="ti-arrow-right"></i></a>
+                </div>
+            </div><!--- END COL -->	
+
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+                <div class="about_img d-none d-sm-block">
+                    <img src="assets/img/vv-min.jpg" alt="about image" style="border-radius: 8px">		
+                </div>					
+            </div><!--- END COL -->									             
+        </div><!--- END ROW -->	
+	
+    </div><!--- END CONTAINER -->
+</section>
+<!-- END ABOUT US -->
+
+<!-- START TEAM -->
+<section id="team" class="team-area section-padding">
+    <div class="container">									
+        <div class="section-title text-left wow zoomIn">	
+            <h2>Notre équipe</h2>
+        </div>				
+        <div class="row text-center">								
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                <div class="our-team">
+                    <div class="single-team">
+                        <div class="team-img">
+                            <div style="background: url(/assets/img/team/ToudjeJosias.png); width: 100%; height: 290px; background-size: cover; background-position: top;"></div>
+                            <ul class="team-social">
+                                <li><a href="#" class="ti-facebook facebook"></a></li>
+                                <li><a href="#" class="ti-linkedin twitter"></a></li>
+                            </ul>
+                        </div>	
+                        <p>Juriste Fiscaliste</p>
+                        <h3>Josias Toudje</h3>
+                        <p>(Co-founder)</p>	
+                    </div>	
+                                            
+                </div><!--- END OUR TEAM -->						
+            </div><!--- END COL -->	
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                <div class="our-team">
+                    <div class="single-team">
+                        <div class="team-img">
+                            <div style="background: url(/assets/img/team/ValerieDecoste.jpg); width: 100%; height: 290px; background-size: cover; background-position: top;"></div>
+                            <ul class="team-social">
+                                <li><a href="#" class="ti-facebook facebook"></a></li>
+                                <li><a href="#" class="ti-linkedin twitter"></a></li>
+                            </ul>
+                        </div>
+                        <p>Office Coordinator</p>
+                        <h3>Valérie De Coster</h3>	
+                        <p>(Co-founder)</p>							
+                    </div>										
+                </div><!--- END OUR TEAM -->						
+            </div><!--- END COL -->	
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                <div class="our-team">
+                    <div class="single-team">
+                        <div class="team-img">
+                            <div style="background: url(/assets/img/team/Dorothyoger.jpeg); width: 100%; height: 290px; background-size: 80%; background-position: top; background-repeat: no-repeat"></div>
+                            <ul class="team-social">
+                                <li><a href="#" class="ti-facebook facebook"></a></li>
+                                <li><a href="#" class="ti-linkedin twitter"></a></li>
+                            </ul>
+                        </div>	
+                        <p>Consultante, Coach PNL</p>
+                        <h3>Dorothy Over</h3>
+                        
+                    </div>							
+                </div><!--- END OUR TEAM -->						
+            </div><!--- END COL -->		
+                                        
+        </div><!--- END ROW -->
+    </div><!--- END CONTAINER -->
+</section>
+<!-- END TEAM -->
+
+<section class="section-padding" style="background: #F5FBF9;">
+    <div class="container">
+        <div class="row pt-5 pb-5" style="background: #434859; color: white; padding-left: 10px; padding-right: 10px; border-radius: 4px;">
+            <div class="col-lg-4 col-xs-12 col-md-4 text-sm-left text-center">
+                <h3 style="color: white">Obtenez votre <br> Consultation <span style="font-weight: bold">gratuite</span></h3>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-md-4 text-center mb-4 mb-sm-0 mt-4 mt-sm-0">   
+                <div class="phone-icon">
+                    <i class="lnr lnr-phone-handset" style="color: black; font-weight: bold; font-size: 25px;"></i>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-md-4 text-sm-right text-center">
+                <a href="tel:+32477506867" style="font-size: 1.75rem; color: white">+32 (0)4 775 068 67</a><br>
+                <a href="mailto:contact@jvgo.be" style="font-size: 20px; color: white; font-weight: 500; ">contact@jvgo.be</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- START TESTIMONIAL -->
+<!--
+<section class="testimonial-area section-padding">
+    <div class="container">												
+        <div class="section-title text-left wow zoomIn">
+            <span>Avis des personnes</span>	
+            <h2>Ce que dit le client</h2>
+        </div>						
+        <div class="row">								
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div id="testimonial-slider" class="owl-carousel">
+                    <div class="single_testimonial">
+                        <div class="testi_img">
+                            <i class="ti-quote-left"></i>
+                            <img src="https://getmasum.com/html-preview/jabal/assets/img/testimonial/1.jpg" class="img-fluid" alt="" />			
+                        </div>
+                        <div class="test_content">	
+                            <p>Nous souhaitions être accompagnés pour la création de notre nouvelles filiale en Belgique. La proposition de JVGO par rapport à la meilleure forme juridique adaptée à notre projet de société a su faire la différence suite à notre appel d’offres, par la clarté de l’analyse de nos besoins et le sérieux de la méthode proposée. Ecoute, pertinence, échanges et professionnalisme ont constitué les jalons d’une mission menée efficacement, avec pragmatisme et discernement.</p>							
+                            <h3>Anais Belagii</h3>
+                            <span>Directeur des opérations, OTIXX</span>
+                        </div>
+                    </div>
+                    
+                    <div class="single_testimonial">
+                        <div class="testi_img">
+                            <i class="ti-quote-left"></i>
+                            <img src="https://getmasum.com/html-preview/jabal/assets/img/testimonial/2.jpg" class="img-fluid" alt="" />			
+                        </div>
+                        <div class="test_content">	
+                            <p>Nous avons fait appel à JVGO  pour nous aider à élaborer la stratégie la plus pertinente pour la création de notre start-up et notre arrivée sur le marché. En quelques mois, notre projet a aboutit à une version ultra-complète de ce que nous avons à faire, positionnement, offre, valeur ajoutée, facteurs différenciants, marché cible, action à mener et perspective sur les 3 prochaines années et plus. Un accompagnement au top, aligné avec nos valeurs et attentes, sans eux nous n’en serions pas là aujourd’hui et nous envisageons l’avenir avec beaucoup d’excitation. Certaines rencontres nous inspirent, jvgo en fait partie.</p>
+                            <h3>Edouard Lioris N.</h3>
+                            <span>Manager, Scale srl</span>
+                        </div>
+                    </div>
+                    
+                    <div class="single_testimonial">
+                        <div class="testi_img">
+                            <i class="ti-quote-left"></i>
+                            <img src="https://getmasum.com/html-preview/jabal/assets/img/testimonial/3.jpg" class="img-fluid" alt="" />
+                        </div>	
+                        <div class="test_content">
+                            <p>L’équipe jvgo nous a accompagnés vers notre objectif d’optimisation de notre fiscalité et leur expertise a joué un rôle déterminant d’accélérateur de projet.  Nous profitons aujourd'hui de tous les instruments juridiques légaux nous permettant d’optimiser notre fiscalité et savons pouvoir compter sur les avis éclairés de l’équipe jvgo que nous remercions pour sa valeur plus qu’ajoutée!</p>
+                            <h3>Caroline lebras</h3>
+                            <span>Gérante, GBD Export</span>
+                        </div>								
+                    </div>							
+                </div>  
+            </div>		  
+        </div>
+    </div>
+</section>
+-->
+<!-- END TESTIMONIAL -->
+
+<!-- START PARTNER LOGO -->
+<!--
+<div class="partner-logo" style="padding-top: 100px;">
+    <div class="container">								
+        <div class="section-title text-left wow zoomIn">
+            <span>Nos partenaires</span>	
+            <h2>Nous travaillons depuis des années</h2>
+        </div>															
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo single_logo_bm">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/05/10.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/05/11.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo single_logo_bm">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/05/12.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/05/13.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/06/29.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/06/30.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="single_logo">
+                    <a href="#"><img src="https://aagan.wpengine.com/wp-content/uploads/2018/06/25.png" alt="" class="img-fluid"/></a>
+                </div>						
+            </div>
+        </div>
+    </div>	
+</div>
+-->
+<!-- END PARTNER LOGO -->
+
+<!-- START Contact Us AREA -->		
+<section id="contact" class="contact-us section-padding">
+    <div class="container">				
+        <div class="row align-items-center">					
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 mb-sm-0 mb-3" style="border-radius: 8px; background-color: white; padding-bottom: 15px; box-shadow: 0px 80px 120px -40px rgb(0 0 0 / 24%); transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;">
+                <div class="section-title text-left wow zoomIn">	
+                    <h2 style="text-transform: uppercase; font-size: 25px; line-height: 2rem;">RÉSERVEZ VOTRE CONSULTATION<br> GRATUITE MAINTENANT</h2>
+                </div>	
+                <form class="contact-form" name="enq" method="post" action="{{path('home')}}" onsubmit="return validation();">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Entrer votre nom complet *" required="required">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Entrer votre adresse email *" required="required">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="phone" class="form-control" placeholder="Entrer votre votre numéro de téléphone *" required="required">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="subject" class="form-control" placeholder="Indiquer les prestations souhaiter *" required="required">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea rows="6" name="message" class="form-control" placeholder="Décrivez votre demande" required="required"></textarea>
+                        </div>
+                        <div class="col-md-12 text-left">
+                            <button type="submit" value="Send message" name="submit" class="btn-home-border" title="Submit Your Message!">Envoyer</button>
+                        </div>
+                    </div>
+                </form>							
+            </div><!-- END COL-->
+            
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                <div class="single-contact">
+                    <i class="ti-location-pin"></i>
+                    <div class="contact-content">
+                        Avenue Louise,<br>
+                        2071050 Bruxelles, BELGIQUE
+                    </div>
+                </div><!-- END single-contact -->	
+
+                <div class="single-contact">
+                    <i class="ti-email"></i>
+                    <div class="contact-content" style="margin-top: 15px;">
+                        contact@jvgo.be
+                    </div>
+                </div><!-- END single-contact -->		
+
+                <div class="single-contact">
+                    <i class="fa fa-phone"></i>
+                    <div class="contact-content" style="margin-top: 15px;">
+                        <a href="#">+32 (0)4 775 068 67</a>
+                    </div>
+                </div><!-- END single-contact -->									
+            </div><!-- END Col -->
+        </div><!-- END ROW -->
+    </div><!-- END CONTAINER -->	
+</section>
+<!-- END Contact Us -->
+
+		
+{% endblock %}
