@@ -122,26 +122,7 @@
             <div class="col-md-3">
                 <!-- required for floating -->
                 <!-- Nav tabs -->
-                <ul class="nav nav-tabs tabs-left">
-                    <li style="border: none; padding: 10px;">
-                        <div style="display: flex;">
-                            <img src="/assets/img/avatar_user.jpeg" style="width: 56px; height: 56px; border-radius: 50%">
-                            <p style="margin-bottom: auto; margin-top: auto;">{{app.user.nom}}</p>
-                        </div>
-                    </li>
-                    <li class="active"><a href="{{path('user')}}"><i class="fa fa-folder"></i> Mon dossier</a>
-
-                    </li>
-                    <li><a href="{{path('user.profil')}}"><i class="fa fa-key"></i> Mes accès</a>
-
-                    </li>
-                    <li><a href="#"><i class="fa fa-envelope"></i> Contactez-nous</a>
-
-                    </li>
-                    <li><a href="{{path('logout')}}"><i class="fa fa-power-off"></i> Se deconnecter</a>
-
-                    </li>
-                </ul>
+                {{ include('partials/_sidebar.html.twig') }}
             </div>
             <div class="col-md-9">
                 <!-- Tab panes -->
@@ -151,6 +132,9 @@
                             Mon dossier
                         </div>
                         <div class="tab-pane-body">
+                            
+                            {{ include('partials/_flash_message.html.twig') }}
+
                             <p>Le statut de votre dossier est mise à jour par l'administrateur dès qu'il passe à une étape suivante. Pour plus d'information ou réclamation, vous pouvez <a href="{{path('home')}}#contact" style="color: #434859; text-decoration: underline;">nous contacter</a>.</p>
 
                             <p>Le numéro de votre dossier : <strong>{{app.user.numero}}</strong></p>

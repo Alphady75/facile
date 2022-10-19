@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
+use App\Form\EditProfileType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,7 +28,6 @@ class UserController extends AbstractController
         return $this->render('user/index.html.twig', [
             'controller_name' => 'UserController',
             'statut' => $statut ,
-            'active' => ''
         ]);
     }
 
@@ -53,7 +53,6 @@ class UserController extends AbstractController
 
         return $this->render('user/profil.html.twig', [
             'controller_name' => 'UserController',
-            'active' => ''
         ]);
     }
 
@@ -73,7 +72,31 @@ class UserController extends AbstractController
             'controller_name' => 'UserController',
             'lastUsername' => $lastUsername,
             'error' => $error,
-            'active' => ''
+        ]);
+    }
+
+    /**
+     * @Route("/compte/edition-du-profil", name="edit_profile")
+     */
+    public function editProfile(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $user = $this->getUser();
+
+        $form = $this->createForm(EditProfileType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Votre compte a bien été mise à jour!');
+
+            return $this->redirectToRoute('user');
+        }
+
+        return $this->render('user/edit_profil.html.twig', [
+            'form' => $form->createView(),
+            'user' => $user,
         ]);
     }
 

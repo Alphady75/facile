@@ -17,10 +17,14 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-6 col-lg-5">
+
+				{{ include('partials/_flash_message.html.twig') }}
+				
 				<div class="login-wrap p-4 p-md-5">
 					<div class="icon d-flex align-items-center justify-content-center">
 						<span class="fa fa-user-o"></span>
 					</div>
+
 					<h3 class="text-center mb-4">Connectez-vous?</h3>
 
 					<form action="{{ path('login') }}" method="post" class="login-form">
@@ -54,7 +58,7 @@
 				</div>
 
 				<div class="text-center mt-4">
-					<a href="{{ path('nouveau_client') }}">Nouveau client?</a>
+					<a href="{{ path('app_register') }}">Nouveau client?</a>
 				</div>
 			</div>
 		</div>

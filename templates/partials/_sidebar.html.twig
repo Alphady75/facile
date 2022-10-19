@@ -1,0 +1,25 @@
+<ul class="nav nav-tabs tabs-left">
+	<li style="border: none; padding: 10px;">
+		<div style="display: flex;">
+			<img src="/assets/img/avatar_user.jpeg" style="width: 56px; height: 56px; border-radius: 50%">
+			<p style="margin-bottom: auto; margin-top: auto;" class="p-0">
+				<span class="m-0 p-0">{{app.user.nom ~ ' ' ~ app.user.prenom}}</span> <br> <small class="text-muted m-0 p-0">{{app.user.email}}</small>
+			</p>
+		</div>
+	</li>
+	<li class="{{ app.request.attributes.get('_route') == 'user' ? 'active' : '' }}"><a href="{{path('user')}}"><i class="fa fa-folder"></i> Mon dossier</a>
+
+	</li>
+	<li class="{{ app.request.attributes.get('_route') == 'edit_profile' ? 'active' : '' }}"><a href="{{path('edit_profile')}}"><i class="fa fa-user-edit"></i> Mon profil</a>
+
+	</li>
+	<li class="{{ app.request.attributes.get('_route') == 'user.profil' ? 'active' : '' }}"><a href="{{path('user.profil')}}"><i class="fa fa-key"></i> Mes accès</a>
+
+	</li>
+	<li class=""><a href="#"><i class="fa fa-envelope"></i> Contactez-nous</a>
+
+	</li>
+	<li class=""><a href="{{path('logout')}}"><i class="fa fa-power-off"></i> Se deconnecter</a>
+
+	</li>
+</ul>

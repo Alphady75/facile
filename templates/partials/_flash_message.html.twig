@@ -1,0 +1,17 @@
+{%  for message in app.flashes('success') %}
+<div class="row" style="margin-bottom: 2%">
+	<div class="form-group col-md-12">
+		<div class="alert alert-success" style="background-color: #9BFFBE!important; color: black!important">
+			{{ message }}
+		</div>
+	</div>
+</div>
+{% endfor %} 
+
+{%  for message in app.flashes('error') %}
+<div class="row" style="margin-bottom: 2%">
+	<div class="form-group col-md-12">
+		<div class="alert alert-danger" style="background-color: #F08080!important">{{ message }}</div>
+	</div>
+</div>
+{% endfor %}

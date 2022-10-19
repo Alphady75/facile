@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau client | JVGO{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Style CSS -->      
+<link rel="stylesheet" href="/assets/login/style.css">
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block body %}
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="login-wrap p-4 p-md-5">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-user-o"></span>
+                    </div>
+                    <h3 class="text-center mb-4">Nouveau client?</h3>
+
+                    {{ form_start(registrationForm, {attr: {class: 'login-form'}}) }}
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                {{ form_row(registrationForm.nom) }}
+                            </div>
+                            <div class="col-sm-6">
+                                {{ form_row(registrationForm.prenom) }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                {{ form_row(registrationForm.dateNaissance) }}
+                            </div>
+                            <div class="col-sm-6">
+                                {{ form_row(registrationForm.adresse) }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                {{ form_row(registrationForm.codepostal) }}
+                            </div>
+                            <div class="col-sm-6">
+                                {{ form_row(registrationForm.ville) }}
+                            </div>
+                        </div>
+
+                        {{ form_row(registrationForm.telephone) }}
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                {{ form_row(registrationForm.entreprise) }}
+                            </div>
+                            <div class="col-sm-6">
+                                {{ form_row(registrationForm.activite) }}
+                            </div>
+                        </div>
+
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.plainPassword, {
+                            label: 'Mot de passe*'
+                        }) }}
+                        {{ form_row(registrationForm.agreeTerms) }}
+
+                        <strong class="text-danger"><sup>*</sup>Champs obligatoire</strong>
+                        <small class="d-block pb-3">
+                            Les informations recueillies sont nécessaires au traitement de votre demande.
+                        </small>
+
+                        <div class="form-group" style="margin-bottom: 3%">
+                            <button type="submit" class="btn-home-border p-3 px-5 btn-block">Enregistrer</button>
+                        </div>
+
+                    {{ form_end(registrationForm) }}
+                    
+                </div>
+
+                <div class="p-3 text-center">
+                    Déjà inscrit ! <a href="{{ path('login') }}">Connexion?</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

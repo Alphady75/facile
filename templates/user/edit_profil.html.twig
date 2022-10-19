@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace client | edition du profil{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block stylesheets %}
+<style>
+    #navigation {
+        background: #000!important;
+    }
+    .section-padding {
+        padding: 150px 0px!important;
+    }
+    .tabs-left, .tabs-right {
+        border-bottom: none;
+        padding-top: 2px;
+    }
+    .tabs-left {
+        border-radius:2px;
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        display: block;
+    }
+    .tab-content {
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        border-radius: 2px;
+        min-height: 100%;
+    }
+    .tabs-left>li, .tabs-right>li {
+        float: none;
+    }
+    .tabs-left>li {
+        margin-right: -1px;
+        border-top: 1px solid #ddd;
+    }
+    .tab-pane-head {
+        padding: 10px 15px;
+        background: #434859;
+        color: white;
+    }
+    .tab-pane-body {
+        padding: 10px 15px;
+    }
+    .tabs-left>li>a {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+    }
+    .tabs-left>li.active {
+        background: #434859;
+    }
+    .tabs-left>li.active>a {
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<!-- START HOME -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row" style="min-height:200px;">
+            <div class="col-md-3">
+                <!-- required for floating -->
+                <!-- Nav tabs -->
+                {{ include('partials/_sidebar.html.twig') }}
+            </div>
+            <div class="col-md-9">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active">
+                        <div class="tab-pane-head">
+                            Mon profil
+                        </div>
+                        <div class="tab-pane-body">
+                            <p>Identifiant : <strong>{{app.user.numero}}</strong></p>
+                            <p>Adresse email : <strong>{{app.user.email}}</strong></p>
+
+                            {{ form_start(form, {attr: {class: 'contact-form mb-3'}}) }}
+
+                            <div class="row">
+                                <div class="form-group col-md-6 mt-3">
+                                    <p style="font-size: 18px">Modifiez votre profil: </p>
+                                </div>
+                            </div>
+
+                            {{ include('partials/_flash_message.html.twig') }}
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    {{ form_row(form.nom) }}
+                                </div>
+                                <div class="col-sm-6">
+                                    {{ form_row(form.prenom) }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    {{ form_row(form.dateNaissance) }}
+                                </div>
+                                <div class="col-sm-6">
+                                    {{ form_row(form.adresse) }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    {{ form_row(form.codepostal) }}
+                                </div>
+                                <div class="col-sm-6">
+                                    {{ form_row(form.ville) }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    {{ form_row(form.telephone) }}
+                                </div>
+                                <div class="col-sm-6">
+                                    {{ form_row(form.email) }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    {{ form_row(form.entreprise) }}
+                                </div>
+                                <div class="col-sm-6">
+                                    {{ form_row(form.activite) }}
+                                </div>
+                            </div>
+
+                            <strong class="text-danger"><sup>*</sup>Champs obligatoire</strong>
+
+                            <div class="form-group" style="margin-bottom: 3%">
+                                <button type="submit" class="btn-home-border p-3 px-5 mt-3">Mettre à jour</button>
+                            </div>
+
+                            {{ form_end(form) }}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>
+<!-- END  HOME DESIGN -->
+{% endblock %}
