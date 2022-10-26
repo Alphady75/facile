@@ -67,47 +67,58 @@ class AdminController extends AbstractController
     /**
      * @Route("/dashboard/new-client", name="dashboard.add.client")
      */
-    public function client(EntityManagerInterface $em, Request $request, UserPasswordHasherInterface $passwordHasher): Response
+    public function client(
+        EntityManagerInterface $em, Request $request, 
+        UserPasswordHasherInterface $passwordHasher
+    ): Response
     {
         $client = $this->userRepository->findBy([], ['id' => 'DESC'], 1);
 
         if ($request->isMethod('POST')) {
 
             $user = new User();
-
+            
             try {
                 $numero = $request->get('numero');
                 $nom = $request->get('nom');
+                $prenom = $request->get('prenom');
+                $datenaissance = $request->get('datenaissance');
+                $telephone = $request->get('telephone');
+                $codepostal = $request->get('codepostal');
+                $ville = $request->get('ville');
+                $adresse = $request->get('adresse');
+                $entreprise = $request->get('entreprise');
+                $activite = $request->get('activite');
                 $email = $request->get('email');
                 $password = $request->get('password');
-                $entreprise = $request->get('entreprise');
-                $telephone = $request->get('telephone');
                 $statut = $request->get('statut');
                 
                 $user->setNumero($numero);
                 $user->setNom($nom);
+                $user->setPrenom($prenom);
+                $user->setAdresse($adresse);
+                $user->setCodepostal($codepostal);
+                $user->setVille($ville);
+                $user->setDateNaissance($datenaissance);
+                $user->setEntreprise($entreprise);
+                $user->setActivite($activite);
                 $user->setEmail($email);
                 $user->setPassword($passwordHasher->hashPassword($user, $password));
-                $user->setEntreprise($entreprise);
                 $user->setStatut($statut);
 
-                if($statut == "En création") {
+                if($statut == "Demande envoyer") {
                     $user->setStatutId(1);
-                } else if($statut == "Formalité notaire") {
+                } else if($statut == "Demande en cours de traitement") {
                     $user->setStatutId(2);
-                } else if($statut == "Formalité comptable") {
+                } else if($statut == "Terminer") {
                     $user->setStatutId(3);
-                } else if($statut == "Demande d'immatriculation") {
-                    $user->setStatutId(4);
-                } else if($statut == "Dépôt au moniteur belge") {
-                    $user->setStatutId(5);
                 }
 
-                
                 $em->persist($user);
                 $em->flush();
 
                 return $this->redirectToRoute('dashboard.clients');
+
             } catch (UniqueConstraintViolationException $e) {
                 $this->addFlash('error', 'Un compte est déjà lié avec ce numéro de dossier ou adresse email.');
                 //return $this->redirectToRoute('espace');
@@ -131,29 +142,37 @@ class AdminController extends AbstractController
             try {
                 $numero = $request->get('numero');
                 $nom = $request->get('nom');
+                $prenom = $request->get('prenom');
+                $datenaissance = $request->get('datenaissance');
+                $telephone = $request->get('telephone');
+                $codepostal = $request->get('codepostal');
+                $ville = $request->get('ville');
+                $adresse = $request->get('adresse');
+                $entreprise = $request->get('entreprise');
+                $activite = $request->get('activite');
                 $email = $request->get('email');
                 //$password = $request->get('password');
-                $entreprise = $request->get('entreprise');
-                $telephone = $request->get('telephone');
                 $statut = $request->get('statut');
                 
                 $user->setNumero($numero);
                 $user->setNom($nom);
+                $user->setPrenom($prenom);
+                $user->setAdresse($adresse);
+                $user->setCodepostal($codepostal);
+                $user->setVille($ville);
+                $user->setDateNaissance($datenaissance);
+                $user->setEntreprise($entreprise);
+                $user->setActivite($activite);
                 $user->setEmail($email);
                 //$user->setPassword($passwordHasher->hashPassword($user, $password));
-                $user->setEntreprise($entreprise);
                 $user->setStatut($statut);
 
-                if($statut == "En création") {
+                if($statut == "Demande envoyer") {
                     $user->setStatutId(1);
-                } else if($statut == "Formalité notaire") {
+                } else if($statut == "Demande en cours de traitement") {
                     $user->setStatutId(2);
-                } else if($statut == "Formalité comptable") {
+                } else if($statut == "Terminer") {
                     $user->setStatutId(3);
-                } else if($statut == "Demande d'immatriculation") {
-                    $user->setStatutId(4);
-                } else if($statut == "Dépôt au moniteur belge") {
-                    $user->setStatutId(5);
                 }
 
                 $em->flush();

@@ -19,7 +19,7 @@
                 <form role="form" method="post" action="" enctype="multipart/form-data">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-7">
 
                             <!-- Dossier -->
                             <div class="form-group">
@@ -27,32 +27,74 @@
                                 <input type="text" name="numero" class="form-control" placeholder="Numéro du dossier" value="00{{numero}}2022" required/>
                             </div>
 
-                            <!-- Nom -->
-                            <div class="form-group">
-                                <label>Nom du client *</label>
-                                <input type="text" name="nom" class="form-control" placeholder="Le nom du client" required/>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- Nom -->
+                                    <div class="form-group">
+                                        <label>Nom du client *</label>
+                                        <input type="text" name="nom" class="form-control" placeholder="Le nom du client" required/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- Prenom -->
+                                    <div class="form-group">
+                                        <label>Prénom du client *</label>
+                                        <input type="text" name="prenom" class="form-control" placeholder="Le prénom du client" required/>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label>Email *</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="L'adresse email du client" required/>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- Date de naissance -->
+                                    <div class="form-group">
+                                        <label>Date de naissance du client *</label>
+                                        <input type="date" name="datenaissance" class="form-control" placeholder="La date de naissance du client" required/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+
+                                    <div class="form-group">
+                                        <label>Numéro de téléphone</label>
+                                        <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Le numéro de téléphone du client" required/>
+                                    </div>                                    
+                                </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label>Numéro de téléphone</label>
-                                <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Le numéro de téléphone du client" required/>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Mot de passe *</label>
-                                <input type="password" name="password" class="form-control" placeholder="Le mot de passe" required/>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <!-- Adresse -->
+                                    <div class="form-group">
+                                        <label>Code postal *</label>
+                                        <input type="text" name="codepostal" class="form-control" placeholder="Code postal" required/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <!-- Ville -->
+                                    <div class="form-group">
+                                        <label>Ville *</label>
+                                        <input type="text" name="ville" class="form-control" placeholder="Ville" required/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <!-- Adresse -->
+                                    <div class="form-group">
+                                        <label>Adresse *</label>
+                                        <input type="text" name="adresse" class="form-control" placeholder="Adresse" required/>
+                                    </div>
+                                </div>
                             </div>
                             
                             <div class="form-group">
                                 <label>Entreprise</label>
                                 <input type="text" name="entreprise" placeholder="Le nom de son entreprise" class="form-control"/>
                             </div>
-              
+                            
+                            <div class="form-group">
+                                <label>Activitée(s)</label>
+                                <input type="text" name="activite" placeholder="Activité de l'entreprise" class="form-control"/>
+                            </div>
+
                             <div class="form-group">
                                 <label>Statut du dossier *</label>
                                 <select name="statut" class="form-control" required>
@@ -62,7 +104,17 @@
                                     <option value="3">Terminer</option>
                                 </select>
                             </div>
-                                
+                            
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="L'adresse email du client" required/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Mot de passe *</label>
+                                <input type="password" name="password" class="form-control" placeholder="Le mot de passe" required/>
+                            </div>
+
                         </div>
 
                         <div class="col-md-12 text-left mt-3" style="margin-bottom: 3%">
