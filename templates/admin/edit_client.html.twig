@@ -1,6 +1,6 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Modifier un client | JVGO{% endblock %}
+{% block title %}Editer un dossier | FacileTransac{% endblock %}
 
 {% block body %}
 
@@ -8,7 +8,7 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h2 style="font-size: 24px; font-weight: 700;">Nouveau client</h2>
+        <h2 style="font-size: 24px; font-weight: 700;">Editer un dossier</h2>
     </section>
 
     <!-- Main content -->
@@ -19,7 +19,7 @@
                 <form role="form" method="post" action="" enctype="multipart/form-data">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-7">
 
                             <!-- Dossier -->
                             <div class="form-group">
@@ -27,10 +27,81 @@
                                 <input type="text" name="numero" class="form-control" placeholder="Numéro du dossier" value="{{user.numero}}" required/>
                             </div>
 
-                            <!-- Nom -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- Nom -->
+                                    <div class="form-group">
+                                        <label>Nom du client *</label>
+                                        <input type="text" name="nom" class="form-control" placeholder="Le nom du client" value="{{user.nom}}" required/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- Prenom -->
+                                    <div class="form-group">
+                                        <label>Prénom du client *</label>
+                                        <input type="text" name="prenom" class="form-control" placeholder="Le prénom du client" value="{{user.prenom}}" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- Date de naissance -->
+                                    <div class="form-group">
+                                        <label>Date de naissance du client *</label>
+                                        <input type="date" name="datenaissance" class="form-control" placeholder="La date de naissance du client" value="{{user.dateNaissance|date("Y-m-d")}}" required/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Numéro de téléphone</label>
+                                        <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Le numéro de téléphone du client" value="{{user.telephone}}" required/>
+                                    </div>                                   
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <!-- Adresse -->
+                                    <div class="form-group">
+                                        <label>Code postal *</label>
+                                        <input type="text" name="codepostal" class="form-control" placeholder="Code postal" value="{{user.codepostal}}" required/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <!-- Ville -->
+                                    <div class="form-group">
+                                        <label>Ville *</label>
+                                        <input type="text" name="ville" class="form-control" placeholder="Ville" value="{{user.ville}}" required/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <!-- Adresse -->
+                                    <div class="form-group">
+                                        <label>Adresse *</label>
+                                        <input type="text" name="adresse" class="form-control" placeholder="Adresse" value="{{user.adresse}}" required/>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="form-group">
-                                <label>Nom du client *</label>
-                                <input type="text" name="nom" class="form-control" placeholder="Le nom du client" value="{{user.nom}}" required/>
+                                <label>Entreprise</label>
+                                <input type="text" name="entreprise" placeholder="Le nom de son entreprise" value="{{user.entreprise}}" class="form-control"/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Activitée(s)</label>
+                                <input type="text" name="activite" placeholder="Activité de l'entreprise" value="{{user.activite}}" class="form-control"/>
+                            </div>
+              
+                            <div class="form-group">
+                                <label>Statut du dossier *</label>
+                                <select name="statut" class="form-control" required>
+                                    <option value="" disabled selected hidden>-- Choisir --</option>
+                                    <option value="Demande envoyée" {{user.statut == 'Demande envoyée' ? 'selected' : ''}}>Demande envoyée</option>
+                                    <option value="Demande en cours de traitement" {{user.statut == 'Demande en cours de traitement' ? 'selected' : ''}}>Demande en cours de traitement</option>
+                                    <option value="Terminer" {{user.statut == 'Terminer' ? 'selected' : ''}}>Terminer</option>
+                                </select>
                             </div>
                             
                             <div class="form-group">
@@ -39,31 +110,14 @@
                             </div>
                             
                             <div class="form-group">
-                                <label>Numéro de téléphone</label>
-                                <input type="text" name="telephone" id="telephone" class="form-control" placeholder="Le numéro de téléphone du client" required/>
+                                <label>Mot de passe *</label>
+                                <input type="password" name="password" class="form-control" placeholder="Le mot de passe"/>
                             </div>
-                            
-                            <div class="form-group">
-                                <label>Entreprise</label>
-                                <input type="text" name="entreprise" placeholder="Le nom de son entreprise" value="{{user.entreprise}}" class="form-control"/>
-                            </div>
-              
-                            <div class="form-group">
-                                <label>Statut du dossier *</label>
-                                <select name="statut" class="form-control" required>
-                                    <option value="" disabled selected hidden>-- Choisir --</option>
-                                    <option value="En création" {{user.statut == 'En création' ? 'selected' : ''}}>En création</option>
-                                    <option value="Formalité notaire" {{user.statut == 'Formalité notaire' ? 'selected' : ''}}>Formalité notaire</option>
-                                    <option value="Formalité comptable" {{user.statut == 'Formalité comptable' ? 'selected' : ''}}>Formalité comptable</option>
-                                    <option value="Demande d'immatriculation" {{user.statut == 'Demande d\'immatriculation' ? 'selected' : ''}}>Demande <br>d'immatriculation</option>
-                                    <option value="Dépôt au moniteur belge" {{user.statut == 'Dépôt au moniteur belge' ? 'selected' : ''}}>Dépôt au moniteur belge</option>
-                                </select>
-                            </div>
-                                
+
                         </div>
 
                         <div class="col-md-12 text-left mt-3" style="margin-bottom: 3%">
-                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                            <button type="submit" class="btn btn-primary p-3 px-5">Enregistrer</button>
                         </div>
                     </div><!-- /.row (main row) -->
                 </form>

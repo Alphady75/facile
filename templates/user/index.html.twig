@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Espace client | JVGO{% endblock %}
+{% block title %}Espace client | FacileTransac{% endblock %}
 
 {% block stylesheets %}
     <style>
@@ -56,7 +56,7 @@
         }
         .progressbar li {
             list-style-type: none;
-            width: 20%;
+            width: 33.3%;
             float: left;
             font-size: 12px;
             position: relative;
@@ -65,7 +65,7 @@
             color: #000;
         }
         .progressbar li p {
-            font-size: 11px;
+            font-size: 14px;
             text-transform: none;
             line-height: 1rem;
         }
@@ -135,11 +135,11 @@
                             
                             {{ include('partials/_flash_message.html.twig') }}
 
-                            <p>Le statut de votre dossier est mise à jour par l'administrateur dès qu'il passe à une étape suivante. Pour plus d'information ou réclamation, vous pouvez <a href="{{path('home')}}#contact" style="color: #434859; text-decoration: underline;">nous contacter</a>.</p>
+                            <p>Le statut de votre dossier est mise à jour par l'administrateur dès qu'il passe à une étape suivante. Pour plus d'information ou réclamation, vous pouvez <a href="http://www.faciletransac.com/maxime.bajazet@ymail.com/index.php/contact/" style="color: #434859; text-decoration: underline;">nous contacter</a>.</p>
 
                             <p>Le numéro de votre dossier : <strong>{{app.user.numero}}</strong></p>
                             <ul id="progress-bar" class="progressbar">
-                                <li class="{{statut >= 1 ? 'active' : ''}}"><p>Demande envoyer</p></li>
+                                <li class="{{statut >= 1 ? 'active' : ''}}"><p>Demande envoyée</p></li>
                                 <li class="{{statut >= 2 ? 'active' : ''}}"><p>Demande en cours de traitement</p></li>
                                 <li class="{{statut >= 3 ? 'active' : ''}}"><p>Terminer</p></li>
                             </ul>

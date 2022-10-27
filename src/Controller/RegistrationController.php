@@ -11,12 +11,25 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use App\Repository\UserRepository;
 
 class RegistrationController extends AbstractController
 {
+
+    /**
+     * @var UserRepository
+     */
+    private $userRepository;
+
+    public function __construct(UserRepository $userRepository) {
+        $this->userRepository = $userRepository;
+    }
+
     #[Route('/inscription', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
+        $client = $this->userRepository->findBy([], ['id' => 'DESC'], 1);
+
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -29,9 +42,9 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-
-            $user->setNumero(123456);
-            $user->setStatut('Demande envoyer');
+            $numero = intval($client[0]->getId()) + 1;
+            $user->setNumero("00".$numero."2022");
+            $user->setStatut('Demande envoyée');
             $user->setStatutId(1);
 
             $entityManager->persist($user);

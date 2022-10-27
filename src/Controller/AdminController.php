@@ -99,14 +99,14 @@ class AdminController extends AbstractController
                 $user->setAdresse($adresse);
                 $user->setCodepostal($codepostal);
                 $user->setVille($ville);
-                $user->setDateNaissance($datenaissance);
+                $user->setDateNaissance(new \DateTime($datenaissance));
                 $user->setEntreprise($entreprise);
                 $user->setActivite($activite);
                 $user->setEmail($email);
                 $user->setPassword($passwordHasher->hashPassword($user, $password));
                 $user->setStatut($statut);
 
-                if($statut == "Demande envoyer") {
+                if($statut == "Demande envoyé") {
                     $user->setStatutId(1);
                 } else if($statut == "Demande en cours de traitement") {
                     $user->setStatutId(2);
@@ -151,7 +151,7 @@ class AdminController extends AbstractController
                 $entreprise = $request->get('entreprise');
                 $activite = $request->get('activite');
                 $email = $request->get('email');
-                //$password = $request->get('password');
+                $password = $request->get('password');
                 $statut = $request->get('statut');
                 
                 $user->setNumero($numero);
@@ -160,14 +160,16 @@ class AdminController extends AbstractController
                 $user->setAdresse($adresse);
                 $user->setCodepostal($codepostal);
                 $user->setVille($ville);
-                $user->setDateNaissance($datenaissance);
+                $user->setDateNaissance(new \DateTime($datenaissance));
                 $user->setEntreprise($entreprise);
                 $user->setActivite($activite);
                 $user->setEmail($email);
-                //$user->setPassword($passwordHasher->hashPassword($user, $password));
+                if($password) {
+                    $user->setPassword($passwordHasher->hashPassword($user, $password));
+                }
                 $user->setStatut($statut);
 
-                if($statut == "Demande envoyer") {
+                if($statut == "Demande envoyée") {
                     $user->setStatutId(1);
                 } else if($statut == "Demande en cours de traitement") {
                     $user->setStatutId(2);

@@ -1,6 +1,6 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Ajouter un client | JVGO{% endblock %}
+{% block title %}Ajouter un client | FacileTransac{% endblock %}
 
 {% block body %}
 
@@ -99,9 +99,9 @@
                                 <label>Statut du dossier *</label>
                                 <select name="statut" class="form-control" required>
                                     <option value="" disabled selected hidden>-- Choisir --</option>
-                                    <option value="1">Demande envoyer</option>
-                                    <option value="2">Demande en cours de traitement</option>
-                                    <option value="3">Terminer</option>
+                                    <option value="Demande envoyée">Demande envoyée</option>
+                                    <option value="Demande en cours de traitement">Demande en cours de traitement</option>
+                                    <option value="Terminer">Terminer</option>
                                 </select>
                             </div>
                             
@@ -118,7 +118,7 @@
                         </div>
 
                         <div class="col-md-12 text-left mt-3" style="margin-bottom: 3%">
-                            <button type="submit" class="btn-home-border p-3 px-5">Enregistrer</button>
+                            <button type="submit" class="btn btn-primary p-3 px-5">Enregistrer</button>
                         </div>
                     </div><!-- /.row (main row) -->
                 </form>

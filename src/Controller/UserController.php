@@ -133,7 +133,7 @@ class UserController extends AbstractController
                 $user->setEntreprise($entreprise);
                 $user->setStatut($statut);
 
-                if($statut == "Demande envoyer") {
+                if($statut == "Demande envoyée") {
                     $user->setStatutId(1);
                 } else if($statut == "Demande en cours de traitement") {
                     $user->setStatutId(2);
