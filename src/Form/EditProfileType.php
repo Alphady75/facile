@@ -37,6 +37,19 @@ class EditProfileType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('sexe', ChoiceType::class, [
+                'label' => "Sexe*",
+                'attr' => ['placeholder' => 'Sexe', 'class' => 'border rounded'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Ce champ ne peut pas être vide',
+                    ]),
+                ],
+                'choices'  => [
+                    'Masculin' => 'Masculin',
+                    'Feminin' => 'Feminin',
+                ],
+            ])
             ->add('dateNaissance', DateType::class, [
                 'label' => 'Date de naissance',
                 'required' => false,

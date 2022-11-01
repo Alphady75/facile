@@ -31,6 +31,11 @@ class User implements UserInterface, \Serializable
     private $prenom;
 
     /**
+     * @ORM\Column(type="string", length=20, nullable=true)
+     */
+    private $sexe;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $adresse;
@@ -125,6 +130,18 @@ class User implements UserInterface, \Serializable
     public function setPrenom(?string $prenom): self
     {
         $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getSexe(): ?string
+    {
+        return $this->sexe;
+    }
+
+    public function setSexe(?string $sexe): self
+    {
+        $this->sexe = $sexe;
 
         return $this;
     }

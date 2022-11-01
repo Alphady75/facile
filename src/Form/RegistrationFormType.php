@@ -40,6 +40,19 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('sexe', ChoiceType::class, [
+                'label' => "Sexe*",
+                'attr' => ['placeholder' => 'Sexe'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Ce champ ne peut pas être vide',
+                    ]),
+                ],
+                'choices'  => [
+                    'Masculin' => 'Masculin',
+                    'Feminin' => 'Feminin',
+                ],
+            ])
             ->add('dateNaissance', DateType::class, [
                 'label' => 'Date de naissance',
                 'required' => false,

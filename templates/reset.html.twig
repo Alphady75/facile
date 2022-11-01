@@ -46,7 +46,10 @@
 		<link rel="stylesheet" href="/assets/css/responsive.css">
 		<!-- switcher CSS -->			
 		<link rel="stylesheet" href="/assets/css/switcher/switcher.css"> 	
-		<link rel="stylesheet" href="/assets/css/switcher/style1.css" id="colors">	
+		<link rel="stylesheet" href="/assets/css/switcher/style1.css" id="colors">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Style CSS -->      
+		<link rel="stylesheet" href="/assets/login/style.css">	
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -90,12 +93,42 @@
 			</div>
 		</div>
 		 <!--  END PRELOADER -->
-		
-		{% block header %}{% endblock %}
-		
-        {% block body %}{% endblock %}
 
-        {% block footer %}{% endblock %}			
+		 <section class="ftco-section mt-1 pt-4 pb-4 mb-1">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-{% block class %}5{% endblock %}">
+
+						{{ include('partials/_flash_message.html.twig') }}
+						
+						<div class="login-wrap p-4 p-md-5 shadow-sm rounded">
+							<div class="icon d-flex align-items-center justify-content-center">
+		                        <span class="fa fa-user-o"></span>
+		                    </div>
+
+							<h1 class="text-center mb-4 h3">{% block pageTitle %}{% endblock %}</h1>
+
+							<div class="login-form">
+
+								{% block body %}{% endblock %}
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        {% block footer %}
+        <ul class="nav mt-2 justify-content-center">
+			<li class="nav-item">
+				<a href="{{ path('app_register') }}" class="nav-link">Nouveau client?</a>
+			</li>
+			<li class="nav-item">
+				<a href="{{ path('login') }}" class="nav-link">Se connecter</a>
+			</li>
+		</ul>
+        {% endblock %}			
 		
 		<!-- Latest jQuery -->
 		<script src="/assets/js/jquery-1.12.4.min.js"></script>
@@ -154,8 +187,5 @@
 				}
 			}
 		</script>
-
-
-
     </body>
 </html>

@@ -82,6 +82,7 @@ class AdminController extends AbstractController
                 $numero = $request->get('numero');
                 $nom = $request->get('nom');
                 $prenom = $request->get('prenom');
+                $sexe = $request->get('sexe');
                 $datenaissance = $request->get('datenaissance');
                 $telephone = $request->get('telephone');
                 $codepostal = $request->get('codepostal');
@@ -96,6 +97,7 @@ class AdminController extends AbstractController
                 $user->setNumero($numero);
                 $user->setNom($nom);
                 $user->setPrenom($prenom);
+                $user->setSexe($sexe);
                 $user->setAdresse($adresse);
                 $user->setCodepostal($codepostal);
                 $user->setVille($ville);
@@ -143,6 +145,7 @@ class AdminController extends AbstractController
                 $numero = $request->get('numero');
                 $nom = $request->get('nom');
                 $prenom = $request->get('prenom');
+                $sexe = $request->get('sexe');
                 $datenaissance = $request->get('datenaissance');
                 $telephone = $request->get('telephone');
                 $codepostal = $request->get('codepostal');
@@ -157,6 +160,7 @@ class AdminController extends AbstractController
                 $user->setNumero($numero);
                 $user->setNom($nom);
                 $user->setPrenom($prenom);
+                $user->setSexe($sexe);
                 $user->setAdresse($adresse);
                 $user->setCodepostal($codepostal);
                 $user->setVille($ville);
